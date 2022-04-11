@@ -12,3 +12,40 @@ h1, h2 {
     justify-content: center;
 }
 
+.card {
+    width: 150px;
+    height: 200px;
+    margin: 15px;
+}
+
+.red {
+    color: red;
+    font-size: 30px;
+}
+
+.black {
+    color: black;
+    font-size: 30px;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10%;
+}
+
+
+.suitContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.suits1 {
+    font-size: 70px;
+}
+
+.joker {
+    font-size: 70px;
+}

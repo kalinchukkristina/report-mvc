@@ -1,0 +1,58 @@
+{# templates/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<h1>Draw a number of cards</h1>
+<div>
+    <h2>Your card:</h2>
+    {% if flag == 'false' %}
+        <div class="cardContainer">
+            {% for randomCard in randomCards %}
+            <div class="{{ randomCard.class1 }} {{ randomCard.class2 }}">
+                <p>{{ randomCard.number }}</p>
+                <div class="suitContainer">
+                    {% if randomCard.suits == "diamonds" %}
+                        <div class="suits">  	
+                            &#9830; </div>
+                    {% elseif randomCard.suits == "spades"%}
+                        <div class="suits"> &#9828; </div>
+                    {% elseif randomCard.suits == "hearts"%}
+                        <div class="suits"> &#9825; </div>
+                    {% else %}
+                        <div class="suits"> &#9831; </div>
+                    {% endif  %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>Remaining cards:</h2>
+        <div class="cardContainer">
+            {% for card in deck %}
+            <div class="{{ card.class1 }} {{ card.class2 }}">
+                <p>{{ card.number }}</p>
+                <div class="suitContainer">
+                    {% if card.suits == "diamonds" %}
+                        <div class="suits">  	
+                            &#9830; </div>
+                    {% elseif card.suits == "spades"%}
+                        <div class="suits"> &#9828; </div>
+                    {% elseif card.suits == "hearts"%}
+                        <div class="suits"> &#9825; </div>
+                    {% else %}
+                        <div class="suits"> &#9831; </div>
+                    {% endif  %}
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2>You are out of cards</h2>
+    {% endif %}
+</div>
+
+
+{% endblock %}

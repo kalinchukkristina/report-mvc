@@ -1,0 +1,60 @@
+{# templates/index.html.twig #}
+{% extends './base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Deal cards to the players</h1>
+    {% if flag == 'false' %}
+        {% for player in players  %}
+        <p>Player {{ player.id }}: </p>
+        <div class="cardContainer">
+            {% for card in player.hand %}
+            <div class="{{ card.class1 }} {{ card.class2 }}">
+                <p>{{ card.number }}</p>
+                <div class="suitContainer">
+                    {% if card.suits == "diamonds" %}
+                        <div class="suits">  	
+                            &#9830; </div>
+                    {% elseif card.suits == "spades"%}
+                        <div class="suits"> &#9828; </div>
+                    {% elseif card.suits == "hearts"%}
+                        <div class="suits"> &#9825; </div>
+                    {% else %}
+                        <div class="suits"> &#9831; </div>
+                    {% endif  %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {%  endfor %}
+
+        <h1>Remaining cards: </h1>
+        <div class="cardContainer">
+            {% for card in deck %}
+            <div class="{{ card.class1 }} {{ card.class2 }}">
+                <p>{{ card.number }}</p>
+                <div class="suitContainer">
+                    {% if card.suits == "diamonds" %}
+                        <div class="suits">  	
+                            &#9830; </div>
+                    {% elseif card.suits == "spades"%}
+                        <div class="suits"> &#9828; </div>
+                    {% elseif card.suits == "hearts"%}
+                        <div class="suits"> &#9825; </div>
+                    {% else %}
+                        <div class="suits"> &#9831; </div>
+                    {% endif  %}
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2>You are out of cards</h2>
+    {% endif %}
+
+</div>
+
+{% endblock %}

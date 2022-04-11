@@ -34,6 +34,3 @@ class ReportController extends AbstractController
         return $this->render('report.html.twig');
     }
 }
-
-
-

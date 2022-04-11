@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<h1>Deck</h1>
+<div class="cardContainer">
+    {% for card in deck %}
+    <div class="{{ card.class1 }} {{ card.class2 }}">
+        <p>{{ card.number }}</p>
+        <div class="suitContainer">
+            {% if card.suits == "diamonds" %}
+                <div> &#9830; </div>
+            {% elseif card.suits == "spades"%}
+                <div> &#9828; </div>
+            {% elseif card.suits == "hearts"%}
+                <div> &#9825; </div>
+            {% elseif card.suits == "joker"%}
+                <div class="joker"> &#127199; </div>
+            {% else %}
+                <div> &#9831; </div>
+            {% endif  %}
+        </div>
+    </div>
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}
