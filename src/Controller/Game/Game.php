@@ -2,7 +2,7 @@
 
 namespace App\Game;
 
-
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Deck\Deck;
 use App\Card\Card;
 
@@ -10,12 +10,14 @@ class Game
 {
     public function __construct()
     {
-        $deck = new \App\Deck\Deck;
+        $deck = new \App\Deck\Deck();
         $this->currentDeck = $deck->createDeck();
-        $this->player = new \App\Game\Player;
+        $this->player = new \App\Game\Player();
+        $this->banken = new \App\Game\Banken();
     }
 
-    public function drawACard($session) {
+    public function drawACard(SessionInterface $session): Card
+    {
         if ($session->has("deckGame")) {
             $deck = $session->get("deckGame");
             if (count($deck) > 0) {
@@ -45,7 +47,8 @@ class Game
         return $randomCard;
     }
 
-    public function getCardvalue(Card $card) {
+    public function getCardvalue(Card $card): int
+    {
         if ($card->number == "J") {
             $value = 11;
         } elseif ($card->number == "Q") {

@@ -4,21 +4,83 @@
 
 {% block body %}
 <h1>Card game</h1>
+<div class="gameContainer">
+    <div class="game">
 
-<div>
-    <h2> Player </h2>
-    <div class="participants">
+        <div class="participants">
+            <h2> Player </h2>
+            <div class="cardContainer">
+                {% for randomCard in playerHand %}
+                    <div class="{{ randomCard.class1 }} {{ randomCard.class2 }}">
+                        <p>{{ randomCard.number }}</p>
+                        <div class="suitContainer">
+                            {% if randomCard.suits == "diamonds" %}
+                                <div class="suits">  	
+                                    &#9830; </div>
+                            {% elseif randomCard.suits == "spades"%}
+                                <div class="suits"> &#9828; </div>
+                            {% elseif randomCard.suits == "hearts"%}
+                                <div class="suits"> &#9825; </div>
+                            {% else %}
+                                <div class="suits"> &#9831; </div>
+                            {% endif  %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% if flag == "Player"%}
+                <form method="post">
+                    <input type="submit" name="card" value="Get card">
+                    <input type="submit" name="stop" value="Stop">
+                </form>
+            {% endif %}
+            <p>Player score: {{ points }}</p>
+        </div>
+
+            <div class="participants">
+                <h2> Bank </h2>
+                <div class="cardContainer">
+                    {% for randomCard in bankenHand %}
+                        <div class="{{ randomCard.class1 }} {{ randomCard.class2 }}">
+                            <p>{{ randomCard.number }}</p>
+                            <div class="suitContainer">
+                                {% if randomCard.suits == "diamonds" %}
+                                    <div class="suits">  	
+                                        &#9830; </div>
+                                {% elseif randomCard.suits == "spades"%}
+                                    <div class="suits"> &#9828; </div>
+                                {% elseif randomCard.suits == "hearts"%}
+                                    <div class="suits"> &#9825; </div>
+                                {% else %}
+                                    <div class="suits"> &#9831; </div>
+                                {% endif  %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if flag == "Banken" %}
+                    <form method="post">
+                        <input type="submit" name="cardBank" value="Get card">
+                        <input type="submit" name="stopBank" value="Stop">
+                    </form>
+                {% endif %}
+                <p>Bank score: {{ pointsB }}</p>
+        </div>
+    </div>
+
+    <div>
+        <h2>Remaining cards:</h2>
         <div class="cardContainer">
-            {% for randomCard in playerHand %}
-                <div class="{{ randomCard.class1 }} {{ randomCard.class2 }}">
-                    <p>{{ randomCard.number }}</p>
+            {% for card in currentDeck %}
+                <div class="{{ card.class1 }} {{ card.class2 }}">
+                    <p>{{ card.number }}</p>
                     <div class="suitContainer">
-                        {% if randomCard.suits == "diamonds" %}
+                        {% if card.suits == "diamonds" %}
                             <div class="suits">  	
                                 &#9830; </div>
-                        {% elseif randomCard.suits == "spades"%}
+                        {% elseif card.suits == "spades"%}
                             <div class="suits"> &#9828; </div>
-                        {% elseif randomCard.suits == "hearts"%}
+                        {% elseif card.suits == "hearts"%}
                             <div class="suits"> &#9825; </div>
                         {% else %}
                             <div class="suits"> &#9831; </div>
@@ -28,36 +90,6 @@
             {% endfor %}
         </div>
     </div>
-        <form method="post">
-            <input type="submit" name="card" value="Get card">
-            <input type="submit" name="stop" value="Stop">
-        </form>
-
-        <p>Your score: {{ points }}</p>
 </div>
-
-<div>
-    <h2>Remaining cards:</h2>
-    <div class="cardContainer">
-        {% for card in currentDeck %}
-            <div class="{{ card.class1 }} {{ card.class2 }}">
-                <p>{{ card.number }}</p>
-                <div class="suitContainer">
-                    {% if card.suits == "diamonds" %}
-                        <div class="suits">  	
-                            &#9830; </div>
-                    {% elseif card.suits == "spades"%}
-                        <div class="suits"> &#9828; </div>
-                    {% elseif card.suits == "hearts"%}
-                        <div class="suits"> &#9825; </div>
-                    {% else %}
-                        <div class="suits"> &#9831; </div>
-                    {% endif  %}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-</div>
-
 
 {% endblock %}

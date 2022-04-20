@@ -1,18 +1,24 @@
 <?php
 
 namespace App\Game;
-
-use App\Card\Card; 
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use App\Card\Card;
 
 class Player
 {
-    public function __construct() 
+    public array $hand;
+    public int $points;
+    public array $notEmptyHand;
+    public array $playerHand;
+    public int $currentPoints;
+
+    public function __construct()
     {
         $this->hand = [];
         $this->points = 0;
     }
 
-    public function addCardToHand(Card $card, $session, $cardValue) 
+    public function addCardToHand(Card $card, SessionInterface $session): void
     {
         if ($session->has("playerHand")) {
             $notEmptyHand = $session->get("playerHand");
@@ -24,7 +30,8 @@ class Player
         }
     }
 
-    public function getHand($session) {
+    public function getHand(SessionInterface $session): mixed
+    {
         if ($session->has("playerHand")) {
             $playerHand =  $session->get("playerHand");
         } else {
@@ -34,7 +41,8 @@ class Player
         return $playerHand;
     }
 
-    public function addPoints($cardValue, $session) {
+    public function addPoints(int $cardValue, SessionInterface $session): void
+    {
         if ($session->has("playerPoints")) {
             $currentPoints = $session->get("playerPoints");
             $currentPoints += $cardValue;
@@ -45,8 +53,13 @@ class Player
         }
     }
 
-    public function getPoints($session) {
-        $points =  $session->get("playerPoints");
+    public function getPoints(SessionInterface $session): int
+    {
+        if ($session->has("playerPoints")) {
+            $points = $session->get("playerPoints");
+        } else {
+            $points = 0;
+        }
 
         return $points;
     }

@@ -4,7 +4,12 @@ namespace App\Card;
 
 class Card
 {
-    public function __construct($num, $suits)
+    public int|string $number;
+    public string $suits;
+    public string $class1;
+    public string $class2;
+
+    public function __construct(int|string $num, string $suits)
     {
         $this->number = $num;
         $this->suits = $suits;

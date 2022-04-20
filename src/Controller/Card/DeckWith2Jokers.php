@@ -3,7 +3,6 @@
 namespace App\DeckJoker;
 
 use App\Card\Card;
-
 use App\Deck\Deck;
 
 class DeckWith2Jokers extends Deck

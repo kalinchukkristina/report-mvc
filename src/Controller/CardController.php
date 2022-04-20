@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+use App\Deck\Deck;
+
 class CardController extends AbstractController
 {
     public function createDeck()
