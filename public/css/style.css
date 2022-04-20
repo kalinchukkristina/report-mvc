@@ -49,3 +49,16 @@ h1, h2 {
 .joker {
     font-size: 70px;
 }
+
+.game {
+    display: flex;
+    flex-direction: row;
+}
+
+.participants {
+    width: 100vw;
+    height: 500px;
+    background-color: #fff;
+    margin: 1%;
+    border: 2px solid black;
+}
