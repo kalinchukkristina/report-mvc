@@ -86,10 +86,13 @@ class GameController extends AbstractController
                 $gameOn = False;
             }
         } elseif ($stopBank) {
-            if ($bankenPoints == $playerPoints || $bankenPoints > $playerPoints) {
+            if ($bankenPoints == $playerPoints or $bankenPoints > $playerPoints) {
                 $winner = "Banken";
+                $gameOn = False;
+            } else {
+                $winner = "Player";
+                $gameOn = False;
             }
-            $gameOn = False;
             $session->set("bankenPoints", $bankenPoints);
         } elseif ($restart) {
             $session->clear();

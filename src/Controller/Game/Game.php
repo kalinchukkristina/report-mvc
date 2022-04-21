@@ -28,7 +28,6 @@ class Game
                 unset($deck[$randomNumber]);
                 $deck2 = array_values($deck);
                 $this->currentDeck = $deck2;
-                var_dump(count($deck2));
 
                 $session->set("deckSpel", $deck2);
                 $flag = 'false';
