@@ -71,3 +71,7 @@ h1, h2 {
 .winner {
     background-color: chartreuse;
 }
+
+.container {
+    margin-bottom: 10%;
+}

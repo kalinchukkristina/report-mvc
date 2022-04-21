@@ -5,6 +5,31 @@
 {% block body %}
 <div class="container">
     <h1>Game's documentation</h1>
+    <h3>Classes</h3>
+    <p>The classes I think I will need are Game, Player, Bank and I will also use the old classes Card and Deck from the previous assignment.</p>
+    <p>Class Game I will use to create a Deck of Cards and to draw a card from that deck.</p>
+    <p>Classes Player and Bank will be approximately the same. I think I will have a hand array as an attribute in each of them. Every hand will contain Card object(s) that I will get with the help of Game class and method drawCard.</p>
+    <p>Player and Bank will also have an attribute points to keep track of the points they get. Points will be added with the help of addPoints method.</p>
+    <img src="/img/game.png"  width="500px" alt="class UML">
+    <h3>Code flow </h3>
+    <p>Very general flow chart I think will work is as following:</p>
+    <img src="/img/flow.png" width="600px" alt="code flow">
+    <h3>Pseudo code</h3>
+    <p>Variable flag that controls who is currently playing is set to Player by default. </p>
+    <p>Variable gameOn together with flag controls what buttons to show, set to True by default.</p>
+    <p>Players turn:</p>
+    <p>If flag == Player: show buttons for Player.  Player clicks on button “Get card” (buttons name “card”)</p>
+    <p>If card is clicked: Game->drawCard(), Player->addCardtoHand, Player->addPoints(), Player->getHand(), Player->getPoints().</p>
+    <p>If player Points > 21: winner Banken, elseif player Points == 21: winner player, gameOn = false.</p>
+    <p>If stop is cliked: flag = Banken, save player Points in a session.</p>
+    <p>Banks turn:</p>
+    <p>If flag == Banken: show buttons for Bank, hide buttons for Player. Banken clicks on button “Get Card” (buttons name “cardBank”).</p>
+    <p>If cardBank is clicked: Game->drawCard(), Banken->addCardtoHand, Banken->addPoints(), Banken->getHand(), Banken->getPoints().</p>
+    <p>If bank Points > 21: winner Player, elseif bank points == player points or bank points > player points: winner Banken, gameOn = False.</p>
+    <p>If stopBank is clicked: gameOn = False, if bank points == player points or bank points > player points: winner Banken.</p>
+    <p>If gameOn is false – hide all the buttons in squares, show button to restart. </p>
+    <h3>Other</h3>
+    <p>This is just a general picture of how I think to solve the assignment. I assume that in the end it might differ from what I think now.</p>
 
 </div>
 

@@ -8,39 +8,42 @@ use App\Card\Card;
 
 class Game
 {
-    public function __construct()
+    public function __construct(SessionInterface $session)
     {
-        $deck = new \App\Deck\Deck();
-        $this->currentDeck = $deck->createDeck();
+        $this->deckObj = new \App\Deck\Deck();
+        $this->currentDeck = $this->deckObj->createDeck();
         $this->player = new \App\Game\Player();
         $this->banken = new \App\Game\Banken();
     }
 
     public function drawACard(SessionInterface $session): Card
     {
-        if ($session->has("deckGame")) {
-            $deckPrev = $session->get("deckGame");
+        if ($session->has("deckSpel")) {
+            $deck = $session->get("deckSpel");
             if (count($deck) > 0) {
-                $deck = shuffle($deckPrev);
+                shuffle($deck);
                 $randomNumber = random_int(0, count($deck) - 1);
 
                 $randomCard = $deck[$randomNumber];
                 unset($deck[$randomNumber]);
                 $deck2 = array_values($deck);
+                $this->currentDeck = $deck2;
+                var_dump(count($deck2));
 
-                $session->set("deckGame", $deck2);
+                $session->set("deckSpel", $deck2);
                 $flag = 'false';
             } else {
                 $flag = 'true';
             }
         } else {
-            $deck= $this->currentDeck;
-            shuffle($deck);
+            $deck = $this->deckObj->shuffle();
             $randomNumber = random_int(0, count($deck) - 1);
             $randomCard = $deck[$randomNumber];
             unset($deck[$randomNumber]);
             $deck2 = array_values($deck);
-            $session->set("deckGame", $deck2);
+            $this->currentDeck = $deck2;
+            var_dump(count($deck2));
+            $session->set("deckSpel", $deck2);
             $flag = 'false';
         }
 

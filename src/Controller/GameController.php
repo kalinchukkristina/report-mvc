@@ -34,7 +34,7 @@ class GameController extends AbstractController
         $stop = $request->request->get("stop");
         $stopBank = $request->request->get("stopBank");
 
-        $game = new Game();
+        $game = new Game( $session );
         $player = $game->player;
         $playerHand = $player->getHand($session);
         $playerPoints = $player->getPoints($session);
@@ -96,7 +96,6 @@ class GameController extends AbstractController
             return $this->redirectToRoute('game');
         }
 
-        var_dump($flag);
         $data = [
             'title' => 'Play',
             'currentDeck' => $game->currentDeck,
@@ -115,7 +114,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/clear", name="clear")
+     * @Route("/game/clear", name="clear")
      */
     public function clear(SessionInterface $session): Response
     {
