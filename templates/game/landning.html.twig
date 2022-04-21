@@ -3,10 +3,26 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-<div>
+<div class="container">
     <h1>Game</h1>
+    <h2>Welcome to 21 game!</h2>
+    <p>When you click on "Start Game" link you will be redirected to the game route. You are the Player, your objective is to get 21 points or get as close as possible to 21 points.</p>
+    <p>Player starts first. To draw a card click "Get card" button in your square. You will get a random card, then you can either go on a get another card or click on "Stop" button, then it will be banks turn.</p>
+    <p>Player wins if they get:</p>
+    <ul>
+        <li>21 points in total.</li>
+        <li>More points than bank when bank decides to stop.</li>
+        <li>Bank gets more than 21 points when drawing another card.</li>
+    </ul>
+    <p>Bank wins if:</p>
+    <ul>
+        <li>Player gets more than 21 points when drawing a card.</li>
+        <li>If both player and bank have the same amount of points.</li>
+        <li>If bank gets more points than the player after player has decided to stop.</li>
+    </ul>
 
     <a href="{{ path("play") }}">Start Game </a>
+    <a href="{{ path("doc") }}">Documentation </a>
 
 </div>
 

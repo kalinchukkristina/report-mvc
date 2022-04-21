@@ -5,8 +5,16 @@
 {% block body %}
 <h1>Card game</h1>
 <div class="gameContainer">
-    <div class="game">
+    <div class="winner">
+        {% if winner %}
+        <p> GAME OVER! The winner is: {{ winner }}</p>
+        <form method="post">
+            <input type="submit" name="restart" value="Restart the game">
+        </form>
+        {% endif %}
+    </div>
 
+    <div class="game">
         <div class="participants">
             <h2> Player </h2>
             <div class="cardContainer">
@@ -28,7 +36,7 @@
                     </div>
                 {% endfor %}
             </div>
-            {% if flag == "Player"%}
+            {% if flag == "Player" and gameOn %}
                 <form method="post">
                     <input type="submit" name="card" value="Get card">
                     <input type="submit" name="stop" value="Stop">
@@ -58,7 +66,7 @@
                         </div>
                     {% endfor %}
                 </div>
-                {% if flag == "Banken" %}
+                {% if flag == "Banken" and gameOn %}
                     <form method="post">
                         <input type="submit" name="cardBank" value="Get card">
                         <input type="submit" name="stopBank" value="Stop">

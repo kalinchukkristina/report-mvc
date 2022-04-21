@@ -24,10 +24,11 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/play", name="play", methods={"GET", "POST"})
+     * @Route("/game/play", name="play", methods={"GET", "POST"})
      */
     public function play(SessionInterface $session, Request $request): Response
     {
+        $winner = False;
         $getNewCard = $request->request->get("card");
         $getNewCardBank = $request->request->get("cardBank");
         $stop = $request->request->get("stop");
@@ -43,6 +44,9 @@ class GameController extends AbstractController
         $bankenPoints = $banken->getPoints($session);
         $flag = "Player";
 
+        $restart = $request->request->get("restart");
+        $gameOn = True;
+
         if ($getNewCard) {
             $randomCard = $game->drawACard($session);
             $cardValue = $game->getCardValue($randomCard);
@@ -54,11 +58,16 @@ class GameController extends AbstractController
 
             if ($playerPoints > 21) {
                 $winner = "Banken";
+                $gameOn = False;
+            } elseif ($playerPoints == 21) {
+                $winner = "Player";
+                $gameOn = False;
             }
 
         } elseif ($stop) {
             $session->set("playerPoints", $playerPoints);
             $flag = "Banken";
+
         } elseif ($getNewCardBank) {
             $flag = "Banken";
             $randomCard = $game->drawACard($session);
@@ -71,10 +80,20 @@ class GameController extends AbstractController
 
             if ($bankenPoints > 21) {
                 $winner = "Player";
+                $gameOn = False;
+            } elseif ($bankenPoints == $playerPoints || $bankenPoints > $playerPoints) {
+                $winner = "Banken";
+                $gameOn = False;
             }
         } elseif ($stopBank) {
-            $game->flag = "Stop";
+            if ($bankenPoints == $playerPoints || $bankenPoints > $playerPoints) {
+                $winner = "Banken";
+            }
+            $gameOn = False;
             $session->set("bankenPoints", $bankenPoints);
+        } elseif ($restart) {
+            $session->clear();
+            return $this->redirectToRoute('game');
         }
 
         var_dump($flag);
@@ -86,6 +105,8 @@ class GameController extends AbstractController
             'points' => $playerPoints,
             'pointsB' => $bankenPoints,
             'flag' => $flag,
+            'gameOn' => $gameOn,
+            'winner' => $winner,
         ];
         
 
@@ -100,5 +121,17 @@ class GameController extends AbstractController
     {
         $session->clear();
         return $this->redirectToRoute('game');
+    }
+
+    /**
+     * @Route("/game/doc", name="doc")
+     */
+    public function doc(): Response
+    {
+        $data = [
+            'title' => 'Documentation'
+        ];
+
+        return $this->render('game\doc.html.twig', $data);
     }
 }

@@ -19,9 +19,9 @@ class Game
     public function drawACard(SessionInterface $session): Card
     {
         if ($session->has("deckGame")) {
-            $deck = $session->get("deckGame");
+            $deckPrev = $session->get("deckGame");
             if (count($deck) > 0) {
-                shuffle($deck);
+                $deck = shuffle($deckPrev);
                 $randomNumber = random_int(0, count($deck) - 1);
 
                 $randomCard = $deck[$randomNumber];
@@ -34,7 +34,7 @@ class Game
                 $flag = 'true';
             }
         } else {
-            $deck = $this->currentDeck;
+            $deck= $this->currentDeck;
             shuffle($deck);
             $randomNumber = random_int(0, count($deck) - 1);
             $randomCard = $deck[$randomNumber];
@@ -63,4 +63,5 @@ class Game
 
         return $value;
     }
+
 }
