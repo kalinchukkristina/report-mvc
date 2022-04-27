@@ -1,11 +1,11 @@
 <?php
 
-namespace App\DeckJoker;
+namespace App\Card;
 
 use App\Card\Card;
-use App\Deck\Deck;
+use App\Card\Deck;
 
-class DeckWith2Jokers extends Deck
+class DeckWithTwoJokers extends Deck
 {
     public function addJoker(): void
     {

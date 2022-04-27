@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Game;
+
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Card\Card;
 

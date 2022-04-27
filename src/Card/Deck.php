@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Deck;
+namespace App\Card;
 
 use App\Card\Card;
 
@@ -23,13 +23,6 @@ class Deck
     public function add(Card $card): void
     {
         $this->deck[] = $card;
-    }
-
-    public function sort(): void
-    {
-        foreach ($this->deck as $eachCard) {
-            $die->roll();
-        }
     }
 
     public function shuffle(): array

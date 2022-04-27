@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-use App\Deck\Deck;
+use App\Card;
 
 class CardController extends AbstractController
 {
@@ -16,7 +16,7 @@ class CardController extends AbstractController
     {
         $numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
         $suits = ["diamonds", "clubs", "hearts", "spades"];
-        $newDeck = new \App\Deck\Deck();
+        $newDeck = new \App\Card\Deck();
 
         for ($z = 0; $z <= count($suits) - 1; $z += 1) {
             for ($x = 0; $x <= count($numbers) - 1; $x += 1) {
@@ -227,7 +227,7 @@ class CardController extends AbstractController
     {
         $numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
         $suits = ["diamonds", "clubs", "hearts", "spades"];
-        $newDeck = new \App\DeckJoker\DeckWith2Jokers();
+        $newDeck = new \App\Card\DeckWithTwoJokers();
 
         for ($z = 0; $z <= count($suits) - 1; $z += 1) {
             for ($x = 0; $x <= count($numbers) - 1; $x += 1) {
