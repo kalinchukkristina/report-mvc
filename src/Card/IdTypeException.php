@@ -7,5 +7,4 @@ namespace App\Card;
  */
 class IdTypeException extends \Exception
 {
-
 }

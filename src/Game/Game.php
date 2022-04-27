@@ -3,14 +3,22 @@
 namespace App\Game;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use App\Deck\Deck;
+use App\Card\Deck;
 use App\Card\Card;
+use App\Game\Player;
+use App\Game\Banken;
 
 class Game
 {
-    public function __construct(SessionInterface $session)
+    public Deck $deckObj;
+    public array $currentDeck;
+    public Player $player;
+    public Banken $banken;
+    public Card $randomCard;
+
+    public function __construct()
     {
-        $this->deckObj = new \App\Deck\Deck();
+        $this->deckObj = new \App\Card\Deck();
         $this->currentDeck = $this->deckObj->createDeck();
         $this->player = new \App\Game\Player();
         $this->banken = new \App\Game\Banken();
@@ -65,5 +73,4 @@ class Game
 
         return $value;
     }
-
 }

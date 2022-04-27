@@ -1,4 +1,6 @@
 {
+    "name": "kristina/krka",
+    "description": "composefile for project report in course mvc",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -103,6 +105,7 @@
         "phpmd": "tools/phpmd/vendor/bin/phpmd src text phpmd.xml || true",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 9 src || true",
         "phpcpd": "tools/phpcpd/vendor/bin/phpcpd src || true",
+        "phpdoc": "tools/phpdoc/phpdoc",
         "phpunit": [
             "@putenv XDEBUG_MODE=coverage",
             "php bin/phpunit"

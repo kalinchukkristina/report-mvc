@@ -28,13 +28,13 @@ class GameController extends AbstractController
      */
     public function play(SessionInterface $session, Request $request): Response
     {
-        $winner = False;
+        $winner = false;
         $getNewCard = $request->request->get("card");
         $getNewCardBank = $request->request->get("cardBank");
         $stop = $request->request->get("stop");
         $stopBank = $request->request->get("stopBank");
 
-        $game = new Game( $session );
+        $game = new Game();
         $player = $game->player;
         $playerHand = $player->getHand($session);
         $playerPoints = $player->getPoints($session);
@@ -45,53 +45,51 @@ class GameController extends AbstractController
         $flag = "Player";
 
         $restart = $request->request->get("restart");
-        $gameOn = True;
+        $gameOn = true;
 
         if ($getNewCard) {
             $randomCard = $game->drawACard($session);
             $cardValue = $game->getCardValue($randomCard);
 
-            $player->addCardToHand($randomCard, $session, $cardValue);
+            $player->addCardToHand($randomCard, $session);
             $player->addPoints($cardValue, $session);
             $playerHand = $player->getHand($session);
             $playerPoints = $player->getPoints($session);
 
             if ($playerPoints > 21) {
                 $winner = "Banken";
-                $gameOn = False;
+                $gameOn = false;
             } elseif ($playerPoints == 21) {
                 $winner = "Player";
-                $gameOn = False;
+                $gameOn = false;
             }
-
         } elseif ($stop) {
             $session->set("playerPoints", $playerPoints);
             $flag = "Banken";
-
         } elseif ($getNewCardBank) {
             $flag = "Banken";
             $randomCard = $game->drawACard($session);
             $cardValue = $game->getCardValue($randomCard);
 
-            $banken->addCardToHand($randomCard, $session, $cardValue);
+            $banken->addCardToHand($randomCard, $session);
             $banken->addPoints($cardValue, $session);
             $bankenHand = $banken->getHand($session);
             $bankenPoints = $banken->getPoints($session);
 
             if ($bankenPoints > 21) {
                 $winner = "Player";
-                $gameOn = False;
+                $gameOn = false;
             } elseif ($bankenPoints == $playerPoints || $bankenPoints > $playerPoints) {
                 $winner = "Banken";
-                $gameOn = False;
+                $gameOn = false;
             }
         } elseif ($stopBank) {
             if ($bankenPoints == $playerPoints or $bankenPoints > $playerPoints) {
                 $winner = "Banken";
-                $gameOn = False;
+                $gameOn = false;
             } else {
                 $winner = "Player";
-                $gameOn = False;
+                $gameOn = false;
             }
             $session->set("bankenPoints", $bankenPoints);
         } elseif ($restart) {
@@ -110,7 +108,7 @@ class GameController extends AbstractController
             'gameOn' => $gameOn,
             'winner' => $winner,
         ];
-        
+
 
 
         return $this->render('game\play.html.twig', $data);
