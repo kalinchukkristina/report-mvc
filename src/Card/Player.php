@@ -4,9 +4,10 @@ namespace App\Card;
 
 class Player
 {
-    public $hand = [];
+    public array $hand;
+    public int $id;
 
-    public function __construct($id)
+    public function __construct(mixed $id)
     {
         if (is_int($id)) {
             $this->id = $id;

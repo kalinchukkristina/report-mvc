@@ -26,6 +26,7 @@ class Game
 
     public function drawACard(SessionInterface $session): Card
     {
+        $randomCard = "";
         if ($session->has("deckSpel")) {
             $deck = $session->get("deckSpel");
             if (count($deck) > 0) {

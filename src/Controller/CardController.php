@@ -8,11 +8,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-use App\Card;
+use App\Card\Card;
+use App\Card\Deck;
 
 class CardController extends AbstractController
 {
-    public function createDeck()
+    public Card $randomCard;
+    public Deck $deck2;
+    public Deck $deck;
+    public string $flag;
+
+    public function createDeck(): Deck
     {
         $numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
         $suits = ["diamonds", "clubs", "hearts", "spades"];
@@ -76,6 +82,9 @@ class CardController extends AbstractController
      */
     public function draw(SessionInterface $session): Response
     {
+        $deck2 = [];
+        $randomCard = "";
+
         if ($session->has("deck")) {
             $deck = $session->get("deck");
             if (count($deck) > 0) {
@@ -85,8 +94,6 @@ class CardController extends AbstractController
                 $randomCard = $deck[$randomNumber];
                 unset($deck[$randomNumber]);
                 $deck2 = array_values($deck);
-
-                var_dump(count($deck2));
 
                 $session->set("deck", $deck2);
                 $flag = 'false';
@@ -121,10 +128,11 @@ class CardController extends AbstractController
     public function drawNumber(SessionInterface $session, int $numToDraw): Response
     {
         $randomCards = array();
+        $flag = 'false';
+        $deck = [];
 
         if ($session->has("deck")) {
             for ($i = 0; $i < $numToDraw; $i++) {
-                $deck = [];
                 $deck = $session->get("deck");
                 $randomNumber = random_int(0, count($deck) - 1);
                 shuffle($deck);
@@ -133,7 +141,6 @@ class CardController extends AbstractController
                     array_push($randomCards, $randomCard);
                     array_splice($deck, $randomNumber, 1);
                     $session->set("deck", $deck);
-                    $flag = 'false';
                 } else {
                     $flag = 'true';
                 }
@@ -143,7 +150,6 @@ class CardController extends AbstractController
             $deck = $deckObj->shuffle();
             $session->set("deck", $deck);
             for ($i = 0; $i < $numToDraw; $i++) {
-                $deck = [];
                 $deck = $session->get("deck");
                 $randomNumber = random_int(0, count($deck) - 1);
                 shuffle($deck);
@@ -152,7 +158,6 @@ class CardController extends AbstractController
                     array_push($randomCards, $randomCard);
                     array_splice($deck, $randomNumber, 1);
                     $session->set("deck", $deck);
-                    $flag = 'false';
                 } else {
                     $flag = 'true';
                 }
