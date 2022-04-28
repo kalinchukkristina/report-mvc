@@ -14,11 +14,12 @@ class GameController extends AbstractController
     /**
      * @Route("/game", name="game")
      */
-    public function game(): Response
+    public function game(SessionInterface $session): Response
     {
         $data = [
             'title' => 'Game'
         ];
+        $session->clear();
 
         return $this->render('game\landning.html.twig', $data);
     }
@@ -93,7 +94,6 @@ class GameController extends AbstractController
             }
             $session->set("bankenPoints", $bankenPoints);
         } elseif ($restart) {
-            $session->clear();
             return $this->redirectToRoute('game');
         }
 
@@ -119,7 +119,6 @@ class GameController extends AbstractController
      */
     public function clear(SessionInterface $session): Response
     {
-        $session->clear();
         return $this->redirectToRoute('game');
     }
 
