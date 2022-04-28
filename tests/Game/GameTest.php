@@ -37,6 +37,20 @@ class GameTest extends TestCase
         $this->assertInstanceOf("\App\Card\Card", $randomCard);
     }
 
+    public function testGetRandomCardWhenSessionIsSet()
+    {
+        $game = new Game;
+        $this->assertInstanceOf("\App\Game\Game", $game);
+
+        $card = new Card("J", "spades");
+        $session = new Session(new MockArraySessionStorage());
+        $session->set("deckSpel", [$card]);
+
+        $randomCard = $game->drawACard($session);
+
+        $this->assertInstanceOf("\App\Card\Card", $randomCard);
+    }
+
     /**
      * geting a numerical value of the card if the card is
      * Jack, Quenn, King or Ace

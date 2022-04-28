@@ -9,12 +9,13 @@ class Banken
 {
     /**
      * @var int $points   keeps tract of the points the bankens hand
-     * @var array $handB   bankens hand holding the card
-     * @var array $notEmptyHand   bankens hand holding card when there were card stored in session before
+     * @var array<Card> $handB   bankens hand holding the card
+     * @var array<Card> $notEmptyHand   bankens hand holding card when there were card stored in session before
      */
-    public $points;
-    public $handB;
-    public $notEmptyHand;
+
+    public int $points;
+    public array $handB;
+    public array $notEmptyHand;
 
 
     /**
@@ -86,7 +87,7 @@ class Banken
     /**
      * Method to get current points in the hand
      * @param SessionInterface $session   session superglobal that stores current points
-     * @return mixed
+     * @return int
      */
 
     public function getPoints(SessionInterface $session): int
