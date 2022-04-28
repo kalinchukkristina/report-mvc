@@ -8,14 +8,20 @@ use App\Card\Card;
 class Banken
 {
     /**
-     * @var int $points   keeps tract of the points the bankens hand
-     * @var array<Card> $handB   bankens hand holding the card
-     * @var array<Card> $notEmptyHand   bankens hand holding card when there were card stored in session before
+     * @var int  keeps tract of the points the bankens hand
      */
+    public $points;
 
-    public int $points;
-    public array $handB;
-    public array $notEmptyHand;
+
+    /**
+     * @var array<Card>   bankens hand holding the card
+     */
+    public $handB;
+
+    /**
+     * @var array<Card>   bankens hand holding card when there were card stored in session before
+     */
+    public $notEmptyHand;
 
 
     /**

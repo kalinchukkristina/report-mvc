@@ -7,18 +7,40 @@ use App\Card\Card;
 
 class Player
 {
-    public array $hand;
     public int $points;
-    public array $notEmptyHand;
-    public array $playerHand;
     public int $currentPoints;
 
+    /**
+     * @var array<Card> Players hand of cards
+     */
+    public array $hand;
+
+    /**
+     * @var array<Card> Players hand of card when there is already hand in session
+     */
+    public array $notEmptyHand;
+
+    /**
+     * @var array<Card> players hand of card from session
+     */
+    public array $playerHand;
+
+
+    /**
+     * Constructor to create a Player object
+     */
     public function __construct()
     {
         $this->hand = [];
         $this->points = 0;
     }
 
+
+    /**
+     * @param Card $card a card to add to Players hand
+     * @param SessionInterface $session session to store hand
+     * @return void
+     */
     public function addCardToHand(Card $card, SessionInterface $session): void
     {
         if ($session->has("playerHand")) {
@@ -31,6 +53,11 @@ class Player
         }
     }
 
+
+    /**
+     * @param SessionInterface $session get hand from session
+     * @return mixed
+     */
     public function getHand(SessionInterface $session): mixed
     {
         if ($session->has("playerHand")) {
@@ -42,6 +69,11 @@ class Player
         return $playerHand;
     }
 
+
+    /**
+     * @param int $cardValue card value to calculate points
+     * @param SessionInterface $session to store points in session
+     */
     public function addPoints(int $cardValue, SessionInterface $session): void
     {
         if ($session->has("playerPoints")) {
@@ -54,6 +86,10 @@ class Player
         }
     }
 
+    /**
+     * @param SessionInterface $session get points from session
+     * @return int
+     */
     public function getPoints(SessionInterface $session): int
     {
         if ($session->has("playerPoints")) {

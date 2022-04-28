@@ -6,8 +6,14 @@ use App\Card\Card;
 
 class Deck
 {
-    public array $deck;
+    /**
+     * @var array<Card> a deck of cards
+     */
+    public $deck;
 
+    /**
+     * @return array<Card>
+     */
     public function createDeck(): array
     {
         $numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
@@ -21,11 +27,19 @@ class Deck
 
         return($this->deck);
     }
+    /**
+     * @param Card $card a card to add to the hand
+     * @return void
+     */
 
     public function add(Card $card): void
     {
         $this->deck[] = $card;
     }
+
+    /**
+     * @return array<Card>
+     */
 
     public function shuffle(): array
     {
@@ -33,6 +47,9 @@ class Deck
         return($this->deck);
     }
 
+    /**
+     * @return string returns card as a string
+     */
     public function getAsString(): string
     {
         $str = "";

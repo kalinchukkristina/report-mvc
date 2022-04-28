@@ -11,11 +11,19 @@ use App\Game\Banken;
 class Game
 {
     public Deck $deckObj;
-    public array $currentDeck;
     public Player $player;
     public Banken $banken;
     public Card $randomCard;
 
+    /**
+     * @var array<Card> a current array of deck
+     */
+    public array $currentDeck;
+
+
+    /**
+     * Constructor to create Game object
+     */
     public function __construct()
     {
         $this->deckObj = new \App\Card\Deck();
@@ -24,6 +32,10 @@ class Game
         $this->banken = new \App\Game\Banken();
     }
 
+    /**
+     * @param SessionInterface $session to draw a card from deck that is stored in session
+     * @return Card
+     */
     public function drawACard(SessionInterface $session): Card
     {
         $randomCard = "";
@@ -58,6 +70,11 @@ class Game
         return $randomCard;
     }
 
+
+    /**
+     * @param Card $card a card to get a numerical value of
+     * @return int
+     */
     public function getCardvalue(Card $card): int
     {
         if ($card->number == "J") {

@@ -4,9 +4,15 @@ namespace App\Card;
 
 class Player
 {
-    public array $hand;
     public int $id;
+    /**
+     * @var array<Card> a hand with cards
+     */
+    public array $hand;
 
+    /**
+     * @param mixed $id a players id
+     */
     public function __construct(mixed $id)
     {
         if (is_int($id)) {
@@ -16,6 +22,9 @@ class Player
         }
     }
 
+    /**
+     * @param Card $card a card to be added to the hand
+     */
     public function add(Card $card): void
     {
         $this->hand[] = $card;
