@@ -1,0 +1,23 @@
+{# templates/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Me{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Add book</h1>
+    <form action="{{ path("create_book_handler") }}" method="POST">
+        <label for="title">Title</label><br>
+        <input type="text" name="title" required><br>
+        <label for="isbn">ISBN</label><br>
+        <input type="text" name="isbn" required><br>
+        <label for="author">Author</label><br>
+        <input type="text" name="author" required><br>
+        <label for="pic_url">Picture URL</label><br>
+        <input type="text" name="pic_url"><br>
+        <input type="submit" value="Submit" name="submit">
+    </form>
+
+</div>
+
+{% endblock %}

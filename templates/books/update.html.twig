@@ -1,0 +1,25 @@
+{# templates/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Update{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Update book</h1>
+    <form action="{{ path("update_book_handler") }}" method="POST">
+        <label for="id">ID</label><br>
+        <input type="text" name="id" value="{{ book.id }}" readonly><br>
+        <label for="title">Title</label><br>
+        <input type="text" name="title" value="{{ book.title }}"><br>
+        <label for="isbn">ISBN</label><br>
+        <input type="text" name="isbn" value="{{ book.isbn }}"><br>
+        <label for="author">Author</label><br>
+        <input type="text" name="author" value="{{ book.author }}"><br>
+        <label for="pic_url">Picture URL</label><br>
+        <input type="text" name="pic_url" value="{{ book.pic }}"><br>
+        <input type="submit" value="Save" name="submit">
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,3 +1,11 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%
+}
+
 .php, .me {
     float: inline-start;
     margin: 3%;
@@ -75,3 +83,64 @@ h1, h2 {
 .container {
     margin-bottom: 10%;
 }
+
+table, th, td {
+    border: 2px solid black;
+}
+
+th, td {
+    padding: 10px;
+}
+
+.books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    text-align: center;
+    position: sticky;
+    top: 100vh;
+    background-color: #343a40;
+    color: #c7c9ca;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+ }

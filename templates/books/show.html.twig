@@ -1,0 +1,30 @@
+{# templates/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Me{% endblock %}
+
+{% block body %}
+    <h1>All books in the library</h1>
+    <div class="books">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Action</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td><a href="/books/show/{{ book.id }}">{{ book.id }}</a></td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <th><a href="/books/update/{{ book.id }}"><button>Update</button></a></th>
+            <th><a href="/books/delete/{{ book.id }}"><button>Delete</button></a></th>
+        </tr>
+        {% endfor %}
+{#        <div><img src="{{ book.pic }}" width="300" height="300"></div>#}
+    </table>
+</div>
+
+
+{% endblock %}
