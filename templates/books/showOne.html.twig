@@ -5,7 +5,7 @@
 
 {% block body %}
 <div class="book">
-    <div><img src="{{ book.pic }}" width="auto" height="auto"></div>
+    <div><img src={{ book.pic }} width="auto" height="auto"></div>
     <h2>{{ book.title }}</h2>
     <p>Author: {{ book.author }}</p>
     <p>ISBN: {{ book.isbn }}</p>

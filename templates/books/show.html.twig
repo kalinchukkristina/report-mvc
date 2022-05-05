@@ -14,15 +14,15 @@
             <th>Action</th>
         </tr>
         {% for book in books %}
+        {% set bookId = book.id%}
         <tr>
-            <td><a href="/books/show/{{ book.id }}">{{ book.id }}</a></td>
+            <td><a href="{{ path('book_by_id', {'id': bookId }) }}">{{ book.id }}</a></td>
             <td>{{ book.title }}</td>
             <td>{{ book.author }}</td>
-            <th><a href="/books/update/{{ book.id }}"><button>Update</button></a></th>
-            <th><a href="/books/delete/{{ book.id }}"><button>Delete</button></a></th>
+            <th><a href="{{ path('update_by_id', {'id': bookId }) }}"><button>Update</button></a></th>
+            <th><a href="{{ path('book_delete_by_id', {'id': bookId }) }}"><button>Delete</button></a></th>
         </tr>
         {% endfor %}
-{#        <div><img src="{{ book.pic }}" width="300" height="300"></div>#}
     </table>
 </div>
 
