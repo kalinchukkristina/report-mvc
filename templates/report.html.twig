@@ -50,7 +50,12 @@
 
         <section>
         <h2>Kmom05</h2>
-        <p>Här är redovisningstexten</p>
+        <p>Denna vecka har vi jobbat med ORM och kopplat oss mot en databas med hjälp av Doctrine. Jag har jobbat igenom övningen i min report mapp och skapat databas ”var/data.db”. Det jag saknade i övningen var hur man kunde byta om sina databaser, hur man kunde gå från en db till en annan och förklaring att just DATABASE_URL i .env spelade så stor roll här. Jag vill också bekräfta att jag förstår rätt att om jag t.ex vill koppla mig till en existerande db – ska jag köra kommando php bin/console make:entity men inte göra migration eller hur?</p>
+        <p>Jag upplevde att det var för få ord i övningen, jag skulle uppskatta att det förklarades att kopplingen till db sker just igenom DATABASE_URL, vilka viktiga delar som finns i den urlen, att ”var” är en viktig mapp och inte bara en del av db namn som vi skapar, att entity klass är som en tabell i databas och att entity variabler - som kolumner i databas, när vi skapar migrations, att det gås igenom vilka metoder är tillgängliga i repository och vilken nytta vi har av dem (och vad repository egentligen är). Jag har hittat svar på de frågorna men det skulle underlätta lärandet om förklaringen i övningen var mer utförligt.</p>
+        <p>Jag är glad att vi läste CRUD i databaskursen för att den delen gick mycket bättre för mig än förväntat. Jag skapade formulären till de delarna som behövdes och delade upp mina routes till de som renderade själva formuläret och de som tog hand om POST requesten. Min applikation har jag uppbyggt ungefär likadant som i exemplelkod utan den delen som handlade om formulären och POST requesten.</p>
+        <p>Jag vill också nämna att bilder till böcker kommer ifrån nätet, så om man vill lägga till en ny bild kan man bara klistra in en URL länk till fältet, jag har inga bilder i public mapp alltså. Men URL fältet är inte obligatorisk för att skapa en bok i all fall.   </p>
+        <p>Jag har inte gjort extrauppgiften.</p>
+        <p>Marie nämnde att ORM påminner om lagrade procedurer, jag kan se att det finns likheter i att de båda är typ en lager ovan själva databasen och att man inte jobbar direkt med SQL queries i sin kod utan med det här gränssnittet istället. Men jag behöver mer tid för att bli bekväm med ORM och att den här jämförelsen med lagrade procedurer sjunker in och förstår hur det fungerar till fullo.</p>
         </section>
 
         <section>
