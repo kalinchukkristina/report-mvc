@@ -5,7 +5,6 @@ namespace App\Controller;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BooksRepository;
@@ -24,7 +23,8 @@ class BooksController extends AbstractController
     /**
      * @Route("/books/create", name="create_book", methods={"GET","HEAD"})
      */
-    public function createBook(): Response {
+    public function createBook(): Response
+    {
         return $this->render('books/create.html.twig');
     }
 
@@ -32,13 +32,13 @@ class BooksController extends AbstractController
      * @Route("/books/create", name="create_book_handler", methods={"POST"})
      */
     public function createBookHandler(
-        ManagerRegistry $doctrine, Request $request,
+        ManagerRegistry $doctrine,
+        Request $request,
     ): Response {
         $entityManager = $doctrine->getManager();
         $submit = $request->request->get('submit');
         $title = $request->request->get('title');
         if ($submit && $title) {
-
             $isbn = $request->request->get('isbn');
             $author = $request->request->get('author');
             $pic_url = $request->request->get('pic_url');
@@ -156,7 +156,7 @@ class BooksController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id ' . $id
             );
         }
 
