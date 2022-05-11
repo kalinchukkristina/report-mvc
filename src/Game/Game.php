@@ -15,6 +15,11 @@ class Game
     public Card $randomCard;
     public Deck $deckObj;
 
+    /**
+     * @var array<Card> an array of current decks
+     */
+    public $currentDeck;
+
 
     /**
      * Constructor to create Game object

@@ -26,10 +26,10 @@ class PlayerCardTest extends TestCase
     public function testCreatePlayerCardWrongId()
     {
         $this->expectException(IdTypeException::class);
-        $playerCard = new PlayerCard("33");
+        new PlayerCard("33");
 
         $this->expectException(IdTypeException::class);
-        $playerCard = new PlayerCard(false);
+        new PlayerCard(false);
     }
 
     /**

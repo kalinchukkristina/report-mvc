@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Game\Game;
+use App\Game\GameHandler;
 
 class GameController extends AbstractController
 {
@@ -29,58 +30,44 @@ class GameController extends AbstractController
      */
     public function play(SessionInterface $session, Request $request): Response
     {
+        $flag = "Player";
+        $gameOn = true;
         $winner = false;
+
         $getNewCard = $request->request->get("card");
         $getNewCardBank = $request->request->get("cardBank");
         $stop = $request->request->get("stop");
         $stopBank = $request->request->get("stopBank");
+        $restart = $request->request->get("restart");
 
         $game = new Game();
-        $player = $game->player;
-        $playerHand = $player->getHand($session);
-        $playerPoints = $player->getPoints($session);
+        $gameHandler = new GameHandler();
 
         $banken = $game->banken;
-        $bankenHand = $banken->getHand($session);
+        $player = $game->player;
+        $playerPoints = $player->getPoints($session);
         $bankenPoints = $banken->getPoints($session);
-        $flag = "Player";
-
-        $restart = $request->request->get("restart");
-        $gameOn = true;
 
         if ($getNewCard) {
-            $randomCard = $game->drawACard($session);
-            $cardValue = $game->getCardValue($randomCard);
-
-            $player->addCardToHand($randomCard, $session);
-            $player->addPoints($cardValue, $session);
-            $playerHand = $player->getHand($session);
+            $gameHandler->playerGetCard($session, $player, $game);
             $playerPoints = $player->getPoints($session);
-
             if ($playerPoints > 21) {
                 $winner = "Banken";
                 $gameOn = false;
             } elseif ($playerPoints == 21) {
-                $winner = "Player";
                 $gameOn = false;
+                $winner = "Player";
             }
         } elseif ($stop) {
-            $session->set("playerPoints", $playerPoints);
             $flag = "Banken";
         } elseif ($getNewCardBank) {
             $flag = "Banken";
-            $randomCard = $game->drawACard($session);
-            $cardValue = $game->getCardValue($randomCard);
-
-            $banken->addCardToHand($randomCard, $session);
-            $banken->addPoints($cardValue, $session);
-            $bankenHand = $banken->getHand($session);
+            $gameHandler->bankenGetCard($session, $banken, $game);
             $bankenPoints = $banken->getPoints($session);
-
-            if ($bankenPoints > 21) {
-                $winner = "Player";
+            if ($bankenPoints > 21 ) {
                 $gameOn = false;
-            } elseif ($bankenPoints == $playerPoints || $bankenPoints > $playerPoints) {
+                $winner = "Player";
+            } elseif ($bankenPoints == $playerPoints or $bankenPoints > $playerPoints) {
                 $winner = "Banken";
                 $gameOn = false;
             }
@@ -92,10 +79,12 @@ class GameController extends AbstractController
                 $winner = "Player";
                 $gameOn = false;
             }
-            $session->set("bankenPoints", $bankenPoints);
         } elseif ($restart) {
             return $this->redirectToRoute('game');
         }
+
+        $playerHand = $player->getHand($session);
+        $bankenHand = $banken->getHand($session);
 
         $data = [
             'title' => 'Play',
