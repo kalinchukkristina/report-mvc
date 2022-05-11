@@ -155,3 +155,9 @@ form {
     width: 30em;
     padding: 5%;
 }
+
+.submit_game {
+    width: 25px;
+    background-color: #343a40;
+    color: #c7c9ca;
+}

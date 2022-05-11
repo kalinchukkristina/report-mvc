@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-05-09 23:34:35        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-05-11 17:44:25        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -258,6 +258,16 @@
         "relations": []
     },
     {
+        "name": "\\App\\Card\\CardHandler",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Card\\Deck",
         "size": 3000,
         "relations": []
@@ -278,7 +288,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Card\\Player",
+        "name": "\\App\\Card\\PlayerCard",
         "size": 3000,
         "relations": []
     },
@@ -339,20 +349,15 @@
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\App\\Card\\Deck",
-            "\\App\\Card\\Card",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\Routing\\Annotation\\Route",
+            "\\App\\Card\\Deck",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Card\\Player",
+            "\\App\\Card\\CardHandler",
+            "\\App\\Card\\PlayerCard",
             "\\App\\Card\\DeckWithTwoJokers",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
-    },
-    {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
@@ -380,6 +385,15 @@
             "\\App\\Game\\Banken",
             "\\App\\Card\\Card",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\MetricsController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
         ]
     },
     {
@@ -444,24 +458,6 @@
     },
     {
         "name": "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\AppBundle\\Twig\\ExternalLinkFilter",
-        "size": 3000,
-        "relations": [
-            "\\Twig_Extension",
-            "\\Twig_SimpleFilter"
-        ]
-    },
-    {
-        "name": "\\Twig_Extension",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Twig_SimpleFilter",
         "size": 3000,
         "relations": []
     }

@@ -4,44 +4,44 @@ namespace App\Card;
 
 use PHPUnit\Framework\TestCase;
 /**
- * Test case for class Player
+ * Test case for class PlayerCard
  */
-class PlayerTest extends TestCase
+class PlayerCardTest extends TestCase
 {
     /**
-     * Creating object Player with correct id
+     * Creating object PlayerCard with correct id
      */
-    public function testCreatePlayer()
+    public function testCreatePlayerCard()
     {
-        $player = new Player(1);
-        $this->assertEquals(1, $player->id);
+        $playerCard = new PlayerCard(1);
+        $this->assertEquals(1, $playerCard->idNum);
 
-        $player = new Player(3);
-        $this->assertEquals(3, $player->id);
+        $playerCard = new PlayerCard(3);
+        $this->assertEquals(3, $playerCard->idNum);
     }
 
     /**
-     * Creating object Player with incorrect id
+     * Creating object PlayerCard with incorrect id
      */
-    public function testCreatePlayerWrongId()
+    public function testCreatePlayerCardWrongId()
     {
         $this->expectException(IdTypeException::class);
-        $player = new Player("33");
+        $playerCard = new PlayerCard("33");
 
         $this->expectException(IdTypeException::class);
-        $player = new Player(false);
+        $playerCard = new PlayerCard(false);
     }
 
     /**
-     * Creating object Player with incorrect id
+     * Creating object PlayerCard with incorrect id
      */
     public function testAddcardToHand()
     {
-        $player = new Player(1);
+        $playerCard = new PlayerCard(1);
         $card = new Card(2, "clubs");
 
-        $player->add($card);
-        $this->assertContains($card, $player->hand);
+        $playerCard->add($card);
+        $this->assertContains($card, $playerCard->hand);
 
     }
 

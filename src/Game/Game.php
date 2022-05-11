@@ -10,15 +10,10 @@ use App\Game\Banken;
 
 class Game
 {
-    public Deck $deckObj;
     public Player $player;
     public Banken $banken;
     public Card $randomCard;
-
-    /**
-     * @var array<Card> a current array of deck
-     */
-    public array $currentDeck;
+    public Deck $deckObj;
 
 
     /**
@@ -27,7 +22,7 @@ class Game
     public function __construct()
     {
         $this->deckObj = new \App\Card\Deck();
-        $this->currentDeck = $this->deckObj->createDeck();
+        $this->currentDeck = $this->deckObj->deck;
         $this->player = new \App\Game\Player();
         $this->banken = new \App\Game\Banken();
     }

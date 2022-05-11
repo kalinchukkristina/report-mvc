@@ -17,8 +17,7 @@ class DeckTest extends TestCase
         $deckObj = new Deck();
         $this->assertInstanceOf("\App\Card\Deck", $deckObj);
 
-        $deck = $deckObj->createDeck();
-        $this->assertIsArray($deck);
+        $this->assertIsArray($deckObj->deck);
     }
 
     /**
@@ -33,7 +32,7 @@ class DeckTest extends TestCase
         $deck = $deckObj->add($card);
         $this->assertContains($card, $deckObj->deck);
 
-        $this->assertCount(1, $deckObj->deck);
+        $this->assertCount(53, $deckObj->deck);
     }
 
     /**
@@ -44,7 +43,6 @@ class DeckTest extends TestCase
         $deckObj = new Deck();
         $this->assertInstanceOf("\App\Card\Deck", $deckObj);
 
-        $deck = $deckObj->createDeck();
         $deckShuffled = $deckObj->shuffle();
         $this->assertIsArray($deckShuffled);
 
@@ -59,7 +57,6 @@ class DeckTest extends TestCase
         $deckObj = new Deck();
         $this->assertInstanceOf("\App\Card\Deck", $deckObj);
 
-        $deckObj->createDeck();
         $res = $deckObj->getAsString();
         $this->assertStringContainsString("6:clubs", $res);
         $this->assertStringContainsString("J:spades", $res);

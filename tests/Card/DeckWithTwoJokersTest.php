@@ -20,10 +20,10 @@ class DeckWithTwoJokersTest extends TestCase
         $deckJokerObj->addJoker();
         $this->assertContainsOnlyInstancesOf(Card::class, $deckJokerObj->deck);
 
-        $this->assertCount(1, $deckJokerObj->deck);
+        $this->assertCount(53, $deckJokerObj->deck);
 
         $deckJokerObj->addJoker();
-        $this->assertCount(2, $deckJokerObj->deck);
+        $this->assertCount(54, $deckJokerObj->deck);
     }
 
 }
