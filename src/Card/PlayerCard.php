@@ -2,21 +2,21 @@
 
 namespace App\Card;
 
-class Player
+class PlayerCard
 {
-    public int $id;
+    public int $idNum;
     /**
      * @var array<Card> a hand with cards
      */
     public array $hand;
 
     /**
-     * @param mixed $id a players id
+     * @param mixed $idNum a players idNum
      */
-    public function __construct(mixed $id)
+    public function __construct(mixed $idNum)
     {
-        if (is_int($id)) {
-            $this->id = $id;
+        if (is_int($idNum)) {
+            $this->idNum = $idNum;
         } else {
             throw new IdTypeException("Id should only be a number");
         }

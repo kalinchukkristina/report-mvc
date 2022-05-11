@@ -16,6 +16,18 @@
         <li>
             <a  href="{{ path("draw") }}">Draw</a>
         </li>
+        <li>
+            <a  href="{{ path("drawNumber", {'numToDraw': "3"}) }}">Draw 3 Cards</a>
+        </li>
+        <li>
+            <a  href="{{ path("deal", {'players': "3", 'cards': "3"}) }}">Deal 3 Cards to 3 Players</a>
+        </li>
+        <li>
+            <a  href="{{ path("deck2") }}">Deck with 2 Jokers</a>
+        </li>
+        <li>
+            <a  href="{{ path("api") }}">API</a>
+        </li>
     </ul>
 </div>
 

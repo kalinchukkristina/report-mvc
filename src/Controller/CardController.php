@@ -9,29 +9,25 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Card\Card;
 use App\Card\Deck;
+use App\Card\CardHandler;
+use App\Card\DeckWithTwoJokers;
 
 class CardController extends AbstractController
 {
-    public Card $randomCard;
-    public Deck $deck2;
-    public Deck $deck;
-    public string $flag;
+    /**
+     * @var array<mixed> an array containing a flag variable, a random card object and the length of the remaining deck
+     */
+    private  $randomCardInfo;
 
-    public function createDeck(): Deck
-    {
-        $numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
-        $suits = ["diamonds", "clubs", "hearts", "spades"];
-        $newDeck = new \App\Card\Deck();
+    /**
+     * @var Deck a deck of cards
+     */
+    private $deck;
 
-        for ($z = 0; $z <= count($suits) - 1; $z += 1) {
-            for ($x = 0; $x <= count($numbers) - 1; $x += 1) {
-                $newDeck->add(new \App\Card\Card($numbers[$x], $suits[$z]));
-            }
-        };
-
-        return $newDeck;
-    }
-
+    /**
+     * @var string a flag contaning tru or false to indicate in there are cards left in the deck
+     */
+    private $flag;
 
     /**
      * @Route("/card", name="card")
@@ -42,7 +38,7 @@ class CardController extends AbstractController
             'title' => 'Card'
         ];
 
-        return $this->render('lek\card.html.twig', $data);
+        return $this->render('card\card.html.twig', $data);
     }
 
     /**
@@ -50,14 +46,14 @@ class CardController extends AbstractController
      */
     public function deck(): Response
     {
-        $deck = $this->createDeck();
+        $deck = new Deck();
 
         $data = [
             'title' => 'Deck',
             'deck' => $deck->deck,
         ];
 
-        return $this->render('lek\deck.html.twig', $data);
+        return $this->render('card\deck.html.twig', $data);
     }
 
     /**
@@ -65,7 +61,7 @@ class CardController extends AbstractController
      */
     public function shuffle(SessionInterface $session): Response
     {
-        $deck = $this->createDeck();
+        $deck = new Deck();
         $session->clear();
 
         $data = [
@@ -73,7 +69,7 @@ class CardController extends AbstractController
             'deck' => $deck->shuffle(),
         ];
 
-        return $this->render('lek\deck.html.twig', $data);
+        return $this->render('card\deck.html.twig', $data);
     }
 
     /**
@@ -81,44 +77,23 @@ class CardController extends AbstractController
      */
     public function draw(SessionInterface $session): Response
     {
-        $deck2 = [];
-        $randomCard = "";
+        $handler = new CardHandler();
 
         if ($session->has("deck")) {
             $deck = $session->get("deck");
-            if (count($deck) > 0) {
-                shuffle($deck);
-                $randomNumber = random_int(0, count($deck) - 1);
-
-                $randomCard = $deck[$randomNumber];
-                unset($deck[$randomNumber]);
-                $deck2 = array_values($deck);
-
-                $session->set("deck", $deck2);
-                $flag = 'false';
-            } else {
-                $flag = 'true';
-            }
+            $randomCardInfo = $handler->drawACardFromSessionDeck($deck, $session);
         } else {
-            $deckObj = $this->createDeck();
-            $deck = $deckObj->shuffle();
-            $randomNumber = random_int(0, count($deck) - 1);
-            $randomCard = $deck[$randomNumber];
-            unset($deck[$randomNumber]);
-            $deck2 = array_values($deck);
-            var_dump(count($deck2));
-            $session->set("deck", $deck2);
-            $flag = 'false';
+            $randomCardInfo = $handler->drawACardSessionEmpty($session);
         }
 
         $data = [
             'title' => 'Draw',
-            'randomCard' => $randomCard,
-            'deck' => $deck2,
-            'flag' => $flag
+            'randomCard' => $randomCardInfo[1],
+            'flag' => $randomCardInfo[0],
+            'remainingCards' => $randomCardInfo[2]
         ];
 
-        return $this->render('lek\draw.html.twig', $data);
+        return $this->render('card\draw.html.twig', $data);
     }
 
     /**
@@ -128,51 +103,31 @@ class CardController extends AbstractController
     {
         $randomCards = array();
         $flag = 'false';
-        $deck = [];
+        $handler = new CardHandler();
 
-        if ($session->has("deck")) {
-            for ($i = 0; $i < $numToDraw; $i++) {
+        for ($i = 0; $i < $numToDraw; $i++) {
+            if ($session->has("deck")) {
                 $deck = $session->get("deck");
-                $randomNumber = random_int(0, count($deck) - 1);
-                shuffle($deck);
-                if (count($deck) >= $numToDraw) {
-                    $randomCard = $deck[$randomNumber];
-                    array_push($randomCards, $randomCard);
-                    array_splice($deck, $randomNumber, 1);
-                    $session->set("deck", $deck);
-                } else {
+                $randomCardInfo = $handler->drawACardFromSessionDeck($deck, $session);
+                if ($randomCardInfo[2] < $numToDraw) {
                     $flag = 'true';
-                }
-            }
-        } else {
-            $deckObj = $this->createDeck();
-            $deck = $deckObj->shuffle();
-            $session->set("deck", $deck);
-            for ($i = 0; $i < $numToDraw; $i++) {
-                $deck = $session->get("deck");
-                $randomNumber = random_int(0, count($deck) - 1);
-                shuffle($deck);
-                if (count($deck) >= $numToDraw) {
-                    $randomCard = $deck[$randomNumber];
-                    array_push($randomCards, $randomCard);
-                    array_splice($deck, $randomNumber, 1);
-                    $session->set("deck", $deck);
                 } else {
-                    $flag = 'true';
+                    array_push($randomCards, $randomCardInfo[1]);
                 }
+            } else {
+                $randomCardInfo = $handler->drawACardSessionEmpty($session);
+                array_push($randomCards, $randomCardInfo[1]);
             }
         }
-
-        var_dump(count($deck));
 
         $data = [
             'title' => 'DrawNumber',
             'randomCards' => $randomCards,
-            'deck' => $deck,
+            'remainingCards' => $randomCardInfo[2],
             'flag' => $flag
         ];
 
-        return $this->render('lek\drawNumber.html.twig', $data);
+        return $this->render('card\drawNumber.html.twig', $data);
     }
 
     /**
@@ -184,7 +139,7 @@ class CardController extends AbstractController
             $deck = $session->get("deck2");
             shuffle($deck);
         } else {
-            $deckObj = $this->createDeck();
+            $deckObj = new Deck();
             $deck = $deckObj->shuffle();
         }
 
@@ -192,9 +147,8 @@ class CardController extends AbstractController
 
         if (count($deck) >= ($cards * $players)) {
             for ($i = 1; $i < $players + 1; $i++) {
-                $player = new \App\Card\Player($i);
+                $player = new \App\Card\PlayerCard($i);
                 array_push($listPlayers, $player);
-
                 for ($j = 0; $j < $cards; $j++) {
                     $randomNumber = random_int(0, count($deck) - 1);
                     $randomCard = $deck[$randomNumber];
@@ -209,17 +163,16 @@ class CardController extends AbstractController
         }
 
         $session->set("deck2", $deck);
-
-        var_dump(count($deck));
+        $remainingCards = count($deck);
 
         $data = [
             'title' => 'Deal',
             'players' => $listPlayers,
-            'deck' => $deck,
+            'remainingCards' => $remainingCards,
             'flag' => $flag,
         ];
 
-        return $this->render('lek\deal.html.twig', $data);
+        return $this->render('card\deal.html.twig', $data);
     }
 
 
@@ -229,34 +182,26 @@ class CardController extends AbstractController
      */
     public function deck2(): Response
     {
-        $numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
-        $suits = ["diamonds", "clubs", "hearts", "spades"];
-        $newDeck = new \App\Card\DeckWithTwoJokers();
+        $deck = new DeckWithTwoJokers();
 
-        for ($z = 0; $z <= count($suits) - 1; $z += 1) {
-            for ($x = 0; $x <= count($numbers) - 1; $x += 1) {
-                $newDeck->add(new \App\Card\Card($numbers[$x], $suits[$z]));
-            }
-        };
-
-        $newDeck->addJoker();
-        $newDeck->addJoker();
+        $deck->addJoker();
+        $deck->addJoker();
 
         $data = [
             'title' => 'Deck',
-            'deck' => $newDeck->deck,
+            'deck' => $deck->deck,
         ];
 
-        return $this->render('lek\deckJoker.html.twig', $data);
+        return $this->render('card\deckJoker.html.twig', $data);
     }
 
 
     /**
-     * @Route("/card/api/deck")
+     * @Route("/card/api/deck", name="api")
      */
     public function number(): Response
     {
-        $this->deck = $this->createDeck();
+        $this->deck = new Deck();
 
         $data = [
             'deck' => $this->deck

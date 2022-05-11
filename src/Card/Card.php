@@ -9,6 +9,10 @@ class Card
     public string $class1;
     public string $class2;
 
+    /**
+     * constructor to create a card object
+     */
+
     public function __construct(int|string $num, string $suits)
     {
         $this->number = $num;
@@ -21,6 +25,9 @@ class Card
         }
     }
 
+    /**
+     * method to get card in a string format
+     */
     public function getAsString(): string
     {
         return "[{$this->number}:{$this->suits}]";

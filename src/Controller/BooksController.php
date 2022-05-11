@@ -41,13 +41,13 @@ class BooksController extends AbstractController
         if ($submit && $title) {
             $isbn = $request->request->get('isbn');
             $author = $request->request->get('author');
-            $pic_url = $request->request->get('pic_url');
+            $picUrl = $request->request->get('picUrl');
 
             $book = new Books();
             $book->setTitle(htmlspecialchars($title));
             $book->setIsbn(htmlspecialchars($isbn));
             $book->setAuthor(htmlspecialchars($author));
-            $book->setPic(htmlspecialchars($pic_url));
+            $book->setPic(htmlspecialchars($picUrl));
 
             // tell Doctrine you want to (eventually) save the book
             $entityManager->persist($book);
@@ -126,14 +126,14 @@ class BooksController extends AbstractController
             $title = $request->request->get('title');
             $isbn = $request->request->get('isbn');
             $author = $request->request->get('author');
-            $pic_url = $request->request->get('pic_url');
+            $picUrl = $request->request->get('picUrl');
 
             $book = $BooksRepository
                 ->find($id);
             $book->setTitle(htmlspecialchars($title));
             $book->setIsbn(htmlspecialchars($isbn));
             $book->setAuthor(htmlspecialchars($author));
-            $book->setPic(htmlspecialchars($pic_url));
+            $book->setPic(htmlspecialchars($picUrl));
 
             $entityManager->persist($book);
 
