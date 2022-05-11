@@ -1,0 +1,39 @@
+{# templates/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Metrics</h1><br>
+    <h2>Introduction</h2>
+    <h3>Coverage</h3>
+    <p>Lines, files, classes, methods covered by one or several test cases.</p>
+    <p>According to Scrutinizer code coverage for my project is 27%. </p><br>
+    <h3>Complexity</h3>
+    <p>The higher the value the more complex the code might be resulting in harder to maintain and develop.</p>
+    <p>According to PhpMetrics an average cyclomatic complexity of my classes is 4.05. The most complex classes are BooksController, CardController and GameController.</p><br>
+    <h3>Cohesion</h3>
+    <p>Lower values indicates focused classes with single responsibilities which gives "high cohesion" where the methods really belong to the class. A higher value (low cohesion) might indicate a class with many responsibilities that can be divided into several classes. Try to aim for lower values. That is high cohesion supporting single responsibility.</p>
+    <h3>Coupling</h3>
+    <p>Afferent coupling (AC) is the number of classes affected by given class. Efferent coupling (EC) is the number of classes from which given class receives effects. High number of AC (outgoing) might say that this class uses many other classes. High number of EC (incoming) might say that many other classes depends on this class.</p>
+    <p>PhpMetrics shows that that the class that has the most afferent coupling is Card with 7 connections, calss with most efferent coupling is CardController with 9 connections. </p>
+    <h2>Phpmetrics</h2>
+    <p> PhpMetrics indicates that I have 5 violation, 1 of which is error - GameController has "too complex method code". I have two classes that have complexity above 10 - CardController(16) and GameController(13). Test coverage data is not available in PhpMetrics.
+    LCOM(Lack of cohesion of methods) is 1.47, classes which contribute high numbers to LCOM are ProductController, Banken, Player and ExternalLinkFilter. Highest maintainability index has CardController(51.98), GameController(61) and Game(71.95).</p>
+    <p> Having analyzed the report from PhpMetrics I come to conclusion that the most problamatic classes in my code are CardController and GameController, these are the classes I potentially can improve. </p>
+    <h2>Scrutinizer</h2>
+    <p>Scrutinizer shows that is have bad code coverage - only 27%. Complexity is very high for such classes as Language\PHP\AbstractPHPParser, PHP_CodeSniffer\Tokenizers\PHP, DependencyInjection\Dumper\PhpDumper, PHP_CodeSniffer\Files\File, etc (all of them have F rating). Since this classes are not developed by me, it seems hard for me to improve these numbers.
+        I have though many files(353) with potentials bugs and these are the classes that I wrote, so I see a possibility for improvement here. I haven't found any values for Cohesion in my Scrutinizer report. All in all, it seems like scrutinizer gives me report on many classes that come with framework or other packages which is not very useful, I can focus on fixing the bugs Scrutinizer found in my code, mostly in CardController, BooksController, Game and test classes.    </p>
+    <h2>Improvements</h2>
+    <p>It seems like classes that has most problems are CardController and GameController. These classes are quite big and have large methods, what I think to do is break out some of the code into other classes to reduce the complexity numbers and get rid if the error in PhpMetrics. I am planing on writing additional test and updating the current test to reach code coverage of at least 50%.</p>
+    <div class="metrics">
+        <a href="img/complexity.PNG" target="_blank"><img class="metrics_pic" src="img/complexity.PNG" alt="complexity_numbers"></a>
+        <a href="img/coverage.PNG" target="_blank"><img  class="metrics_pic" src="img/coverage.PNG" alt="code_coverage"></a>
+        <a href="img/error.PNG" target="_blank"><img  class="metrics_pic" src="img/error.PNG" alt="error"></a>
+    </div>
+    
+    <h2>Discussion</h2>
+</div>
+
+{% endblock %}

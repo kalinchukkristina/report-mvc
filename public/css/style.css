@@ -143,4 +143,15 @@ form {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
- }
+}
+
+.metrics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.metrics_pic {
+    width: 30em;
+    padding: 5%;
+}
