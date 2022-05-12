@@ -10,7 +10,7 @@ class CardControllerTest extends WebTestCase
     public function testRenderingCardLandingPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/card');
+        $client->request('GET', '/card');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Kort spel');
@@ -23,7 +23,7 @@ class CardControllerTest extends WebTestCase
     public function testRenderingDeckPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/card/deck');
+        $client->request('GET', '/card/deck');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Deck');
@@ -35,7 +35,7 @@ class CardControllerTest extends WebTestCase
     public function testRenderingShufflePage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/card/deck/shuffle');
+        $client->request('GET', '/card/deck/shuffle');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Deck');
@@ -47,7 +47,7 @@ class CardControllerTest extends WebTestCase
     public function testRenderingDrawPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/card/deck/draw');
+        $client->request('GET', '/card/deck/draw');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Draw');
@@ -61,7 +61,7 @@ class CardControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $param = 3;
-        $crawler = $client->request('GET', "/card/deck/draw/", [3]);
+        $client->request('GET', "/card/deck/draw/", [3]);
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Draw a number of cards');
@@ -74,7 +74,7 @@ class CardControllerTest extends WebTestCase
     public function testRenderingDeckWithjokersPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/card/deck2');
+        $client->request('GET', '/card/deck2');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Deck containing two Jokers');

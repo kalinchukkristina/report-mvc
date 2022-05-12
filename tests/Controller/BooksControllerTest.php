@@ -9,7 +9,7 @@ class BooksControllerTest extends WebTestCase
     public function testRenderLandingPageForBooks(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/books');
+        $client->request('GET', '/books');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('.container > ul > li', 'Show all books');

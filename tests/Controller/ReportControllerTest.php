@@ -9,7 +9,7 @@ class ReportControllerTest extends WebTestCase
     public function testIndexPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/');
+        $client->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Om mig');
@@ -21,7 +21,7 @@ class ReportControllerTest extends WebTestCase
     public function testAboutPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/about');
+        $client->request('GET', '/about');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Om kursen mvc');
@@ -33,7 +33,7 @@ class ReportControllerTest extends WebTestCase
     public function testReportPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/report');
+        $client->request('GET', '/report');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Redovisning av kursmoment i kursen mvc');
