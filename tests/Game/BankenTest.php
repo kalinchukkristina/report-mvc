@@ -116,7 +116,7 @@ class BankenTest extends TestCase
         $bank = new Banken();
         $session = new Session(new MockArraySessionStorage());
 
-        $res = $bank->addPoints(10, $session);
+        $bank->addPoints(10, $session);
         $this->assertEquals(10, $session->get("bankenPoints"));
     }
 

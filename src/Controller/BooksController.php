@@ -130,10 +130,12 @@ class BooksController extends AbstractController
 
             $book = $BooksRepository
                 ->find($id);
-            $book->setTitle(htmlspecialchars($title));
-            $book->setIsbn(htmlspecialchars($isbn));
-            $book->setAuthor(htmlspecialchars($author));
-            $book->setPic(htmlspecialchars($picUrl));
+            if ($book) {
+                $book->setTitle(htmlspecialchars($title));
+                $book->setIsbn(htmlspecialchars($isbn));
+                $book->setAuthor(htmlspecialchars($author));
+                $book->setPic(htmlspecialchars($picUrl));
+            }
 
             $entityManager->persist($book);
 

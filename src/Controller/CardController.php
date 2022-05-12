@@ -188,7 +188,7 @@ class CardController extends AbstractController
         $deck->addJoker();
 
         $data = [
-            'title' => 'Deck',
+            'title' => 'DeckJoker',
             'deck' => $deck->deck,
         ];
 

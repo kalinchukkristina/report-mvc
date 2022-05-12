@@ -73,9 +73,9 @@ class Game
 
     /**
      * @param Card $card a card to get a numerical value of
-     * @return int
+     * @return mixed
      */
-    public function getCardvalue(Card $card): int
+    public function getCardvalue(Card $card): mixed
     {
         if ($card->number == "J") {
             $value = 11;

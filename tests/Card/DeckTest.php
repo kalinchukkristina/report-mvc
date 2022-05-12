@@ -29,7 +29,7 @@ class DeckTest extends TestCase
         $card = new Card(2, "hearts");
         $this->assertInstanceOf("\App\Card\Deck", $deckObj);
 
-        $deck = $deckObj->add($card);
+        $deckObj->add($card);
         $this->assertContains($card, $deckObj->deck);
 
         $this->assertCount(53, $deckObj->deck);

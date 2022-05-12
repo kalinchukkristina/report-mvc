@@ -116,7 +116,7 @@ class PlayerTest extends TestCase
         $player = new Player();
         $session = new Session(new MockArraySessionStorage());
 
-        $res = $player->addPoints(10, $session);
+        $player->addPoints(10, $session);
         $this->assertEquals(10, $session->get("playerPoints"));
     }
 
