@@ -8,32 +8,51 @@
     <h1>Metrics</h1><br>
     <h2>Introduction</h2>
     <h3>Coverage</h3>
-    <p>Lines, files, classes, methods covered by one or several test cases.</p>
+    <p>Coverage shows whether code lines, files, classes and methods are covered by one or several test cases.</p>
     <p>According to Scrutinizer code coverage for my project is 27%. </p><br>
     <h3>Complexity</h3>
     <p>The higher the value the more complex the code might be resulting in harder to maintain and develop.</p>
-    <p>According to PhpMetrics an average cyclomatic complexity of my classes is 4.05. The most complex classes are BooksController, CardController and GameController.</p><br>
+    <p>According to PhpMetrics the average cyclomatic complexity of my classes is 4.05. The most complex classes are BooksController, CardController and GameController.</p><br>
     <h3>Cohesion</h3>
-    <p>Lower values indicates focused classes with single responsibilities which gives "high cohesion" where the methods really belong to the class. A higher value (low cohesion) might indicate a class with many responsibilities that can be divided into several classes. Try to aim for lower values. That is high cohesion supporting single responsibility.</p>
+    <p>Lower values indicate focused classes with single responsibilities which gives "high cohesion" where the methods really belong to the class. A higher value (low cohesion) might indicate a class with many responsibilities that can be divided into several classes. Try to aim for lower values. That is high cohesion supporting single responsibility.</p>
     <h3>Coupling</h3>
-    <p>Afferent coupling (AC) is the number of classes affected by given class. Efferent coupling (EC) is the number of classes from which given class receives effects. High number of AC (outgoing) might say that this class uses many other classes. High number of EC (incoming) might say that many other classes depends on this class.</p>
-    <p>PhpMetrics shows that that the class that has the most afferent coupling is Card with 7 connections, calss with most efferent coupling is CardController with 9 connections. </p>
+    <p>Afferent coupling (AC) is the number of classes affected by a given class. Efferent coupling (EC) is the number of classes from which a given class receives effects. High number of AC (outgoing) might say that this class uses many other classes. High number of EC (incoming) might say that many other classes depend on this class.</p>
+    <p>PhpMetrics shows that the class that has the most afferent coupling is Card with 7 connections, class with the most efferent coupling is CardController with 9 connections. </p>
     <h2>Phpmetrics</h2>
-    <p> PhpMetrics indicates that I have 5 violation, 1 of which is error - GameController has "too complex method code". I have two classes that have complexity above 10 - CardController(16) and GameController(13). Test coverage data is not available in PhpMetrics.
-    LCOM(Lack of cohesion of methods) is 1.47, classes which contribute high numbers to LCOM are ProductController, Banken, Player and ExternalLinkFilter. Highest maintainability index has CardController(51.98), GameController(61) and Game(71.95).</p>
-    <p> Having analyzed the report from PhpMetrics I come to conclusion that the most problamatic classes in my code are CardController and GameController, these are the classes I potentially can improve. </p>
+    <p> PhpMetrics indicates that I have 5 violations, 1 of which is an error - GameController has "too complex method code". I have two classes that have complexity above 10 - CardController(16) and GameController(13). Test coverage data is not available in PhpMetrics.
+    LCOM(Lack of cohesion of methods) is 1.47, classes that contribute high numbers to LCOM are ProductController, Banken, Player, and ExternalLinkFilter. Highest maintainability index has CardController(51.98), GameController(61) and Game(71.95).</p>
+    <p> Having analyzed the report from PhpMetrics I come to the conclusion that the most problematic classes in my code are CardController and GameController, these are the classes I potentially can improve. </p>
     <h2>Scrutinizer</h2>
-    <p>Scrutinizer shows that is have bad code coverage - only 27%. Complexity is very high for such classes as Language\PHP\AbstractPHPParser, PHP_CodeSniffer\Tokenizers\PHP, DependencyInjection\Dumper\PhpDumper, PHP_CodeSniffer\Files\File, etc (all of them have F rating). Since this classes are not developed by me, it seems hard for me to improve these numbers.
-        I have though many files(353) with potentials bugs and these are the classes that I wrote, so I see a possibility for improvement here. I haven't found any values for Cohesion in my Scrutinizer report. All in all, it seems like scrutinizer gives me report on many classes that come with framework or other packages which is not very useful, I can focus on fixing the bugs Scrutinizer found in my code, mostly in CardController, BooksController, Game and test classes.    </p>
+    <p>Scrutinizer shows that I have bad code coverage - only 27%. Complexity is very high for such classes as Language\PHP\AbstractPHPParser, PHP_CodeSniffer\Tokenizers\PHP, DependencyInjection\Dumper\PhpDumper, PHP_CodeSniffer\Files\File, etc (all of them have F rating). Since I have not developed these classes, it seems hard for me to improve these numbers.
+        I have, though, many files(353) with potential bugs and these are the classes that I wrote, so I see a possibility for improvement here. I haven't found any values for Cohesion in my Scrutinizer report. All in all, it seems like scrutinizer gives me a report on many classes that come with framework or other packages which is not very useful, I can focus on fixing the bugs Scrutinizer found in my code, mostly in CardController, BooksController, Game, and test classes.    </p>
     <h2>Improvements</h2>
-    <p>It seems like classes that has most problems are CardController and GameController. These classes are quite big and have large methods, what I think to do is break out some of the code into other classes to reduce the complexity numbers and get rid if the error in PhpMetrics. I am planing on writing additional test and updating the current test to reach code coverage of at least 50%.</p>
+    <h3>Before</h3>
+    <p>It seems like the classes that have the most problems are CardController and GameController. These classes are quite big and have large methods, what I think to do is break out some of the code into other classes to reduce the complexity numbers and reduce the number of violations in PhpMetrics. I am planning on writing additional tests and updating the current tests to reach code coverage of at least 50%.</p>
     <div class="metrics">
-        <a href="img/complexity.PNG" target="_blank"><img class="metrics_pic" src="img/complexity.PNG" alt="complexity_numbers"></a>
-        <a href="img/coverage.PNG" target="_blank"><img  class="metrics_pic" src="img/coverage.PNG" alt="code_coverage"></a>
-        <a href="img/error.PNG" target="_blank"><img  class="metrics_pic" src="img/error.PNG" alt="error"></a>
+        <a href="img/complexity.PNG" target="_blank"><img class="metrics_pic" src="img/complexity.PNG" alt="complexity_numbers" title="Class complexity 4.05"></a>
+        <a href="img/coverage.PNG" target="_blank"><img  class="metrics_pic" src="img/coverage.PNG" alt="code_coverage" title="Code coverage 27%"></a>
+        <a href="img/error.PNG" target="_blank"><img  class="metrics_pic" src="img/error.PNG" alt="error" title="5 violations"></a>
     </div>
-    
+    <h3>After</h3>
+    <p>After having updated and improved my code I have reached 54% in test coverage compared to 27% before. I have rewritten my CardController and GameController. CardController complexity has decreased from 16 to 9. Unfortunately, I couldn't improve GameController a lot, I broke out some code to GameHandler class but it has not impacted complexity. I have mentioned before
+        that I am aware that this controller contains the game logic. I tried to fix it but couldn't achieve any big progress because the logic in the GameController resembled
+         the logic in LuckyNumberController where if-statements in the controller control the flow and check which buttons have been pressed. 
+         I managed to reduce the number of violations from 5 to 4. The average complexity by class reduced from 4.05 to 3.48.
+        My badges from Scrutinizer have not changed(except for test coverage) because, as I mentioned before, it complains a lot about classes that come from installed packages and framework. I had nothing to do with those errors and didn't know how to fix them, so my Scrutinizer rating stayed the same - 6.14. </p>
+    <div class="metrics">
+        <a href="img/phpmetrics_general2.PNG" target="_blank"><img  class="metrics_pic" src="img/phpmetrics_general2.PNG" alt="phpmetrics overview after update" title="4 violation"></a>
+        <a href="img/scru2.PNG" target="_blank"><img class="metrics_pic" src="img/scru2.PNG" alt="scrutinizer code coverage" title="Code coverage 54%"></a>
+        <a href="img/scrutinizer2.PNG" target="_blank"><img  class="metrics_pic" src="img/scrutinizer2.PNG" alt="scrutinizer code bugs" title="bugs from the framework and packages"></a>
+    </div>
+    <h3>Compare numbers</h3>
+    <ul>
+        <li>5 violations -> 4 violations</li>
+        <li>CardController complexity: 16 -> 9</li>
+        <li>Code coverage: 27% -> 54%</li>
+        <li>Average complexity by class: 4.05 -> 3.48</li>
+    </ul>
     <h2>Discussion</h2>
+    <p>After having analyzed my code and implemented updates I can conclude that this is a good way to approach code quality. I have noticed that some of that values (like issues with the code) are better in Scrutinizer, while others (like complexity and defects) were more detailed in PhpMetrics, that is why it is beneficial to work with both tools. The downsides that I noticed are that not always the feedback is relevant in terms of where the lines of code come from and not always it is possible to fix the issues tools complain about. </p>
 </div>
 
 {% endblock %}
