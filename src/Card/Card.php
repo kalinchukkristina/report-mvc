@@ -2,6 +2,9 @@
 
 namespace App\Card;
 
+/**
+ * @SuppressWarnings(PHPMD.ElseExpression)
+ */
 class Card
 {
     public int|string $number;
@@ -11,6 +14,7 @@ class Card
 
     /**
      * constructor to create a card object
+     *
      */
 
     public function __construct(int|string $num, string $suits)

@@ -6,22 +6,25 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Card\Deck;
 use App\Card\Card;
 
+/**
+ * @SuppressWarnings(PHPMD.UnusedPrivateField)
+ */
 class CardHandler
 {
-
-    private int $numberOfCardsLeft;
-    private Card $randomCard;
+    private int $numberOfCardsLeft; /** @phpstan-ignore-line */
+    private Card $randomCard; /** @phpstan-ignore-line */
 
     /**
      * A function to draw a random card from deck if there is already a previous deck stored
      * in session
-     * @param Deck $deck - a deck of cards
+     * @param array<Deck> $deck - a deck of cards
      * @param SessionInterface $session   session superglobal to store the deck
      * @return array<mixed>
      */
     public function drawACardFromSessionDeck(array $deck, SessionInterface $session): array
     {
         $flag = 'true';
+
         if (count($deck) > 0) {
             shuffle($deck);
 
@@ -36,7 +39,7 @@ class CardHandler
             $flag = 'false';
         }
 
-        return [$flag, $randomCard, $numberOfCardsLeft];
+        return [$flag, $randomCard, $numberOfCardsLeft]; /** @phpstan-ignore-line */
     }
 
     /**

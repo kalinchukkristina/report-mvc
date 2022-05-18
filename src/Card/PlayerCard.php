@@ -2,6 +2,9 @@
 
 namespace App\Card;
 
+/**
+ * @SuppressWarnings(PHPMD.ElseExpression)
+ */
 class PlayerCard
 {
     public int $idNum;

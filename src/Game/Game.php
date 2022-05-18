@@ -8,6 +8,9 @@ use App\Card\Card;
 use App\Game\Player;
 use App\Game\Banken;
 
+/**
+ * @SuppressWarnings(PHPMD.ElseExpression)
+ */
 class Game
 {
     public Player $player;
@@ -26,10 +29,10 @@ class Game
      */
     public function __construct()
     {
-        $this->deckObj = new \App\Card\Deck();
+        $this->deckObj = new Deck();
         $this->currentDeck = $this->deckObj->deck;
-        $this->player = new \App\Game\Player();
-        $this->banken = new \App\Game\Banken();
+        $this->player = new Player();
+        $this->banken = new Banken();
     }
 
     /**
@@ -51,9 +54,6 @@ class Game
                 $this->currentDeck = $deck2;
 
                 $session->set("deckSpel", $deck2);
-                $flag = 'false';
-            } else {
-                $flag = 'true';
             }
         } else {
             $deck = $this->deckObj->shuffle();
@@ -64,7 +64,6 @@ class Game
             $this->currentDeck = $deck2;
             var_dump(count($deck2));
             $session->set("deckSpel", $deck2);
-            $flag = 'false';
         }
 
         return $randomCard;

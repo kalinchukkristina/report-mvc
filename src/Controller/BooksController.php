@@ -10,6 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BooksRepository;
 use App\Entity\Books;
 
+/**
+ * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+ * @SuppressWarnings(PHPMD.CamelCaseVariableName)
+ */
 class BooksController extends AbstractController
 {
     #[Route('/books', name: 'app_books')]
@@ -54,7 +58,7 @@ class BooksController extends AbstractController
 
             // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush();
-                return $this->redirectToRoute('books_show_all');
+            return $this->redirectToRoute('books_show_all');
         };
 
         return new Response('failed');
@@ -140,7 +144,7 @@ class BooksController extends AbstractController
             $entityManager->persist($book);
 
             $entityManager->flush();
-                return $this->redirectToRoute('books_show_all');
+            return $this->redirectToRoute('books_show_all');
         };
 
         return new Response('failed');

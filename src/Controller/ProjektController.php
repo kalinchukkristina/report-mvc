@@ -9,15 +9,20 @@ use App\Repository\EnergyShareWorldRepository;
 use App\Repository\EnergyShareSwedenRepository;
 use App\Repository\EnergySourceRepository;
 
+/**
+ * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+ * @SuppressWarnings(PHPMD.CamelCaseVariableName)
+ */
 class ProjektController extends AbstractController
 {
     /**
      * @Route("/proj", name="proj")
      */
-    public function project(EnergyShareWorldRepository $EnergyShareWorldRepository, 
-    EnergyShareSwedenRepository $EnergyShareSwedenRepository,
-    EnergySourceRepository $EnergySourceRepository): Response
-    {
+    public function project(
+        EnergyShareWorldRepository $EnergyShareWorldRepository,
+        EnergyShareSwedenRepository $EnergyShareSwedenRepository,
+        EnergySourceRepository $EnergySourceRepository
+    ): Response {
         $percentageData = $EnergyShareWorldRepository->findAll();
         $percentageDataSweden = $EnergyShareSwedenRepository->findAll();
         $energySource = $EnergySourceRepository->findAll();
@@ -37,7 +42,7 @@ class ProjektController extends AbstractController
     public function aboutProject(): Response
     {
         $data = [
-            'title' => 'About'
+            'title' => 'About project'
         ];
 
         return $this->render('project\about.html.twig', $data);

@@ -10,6 +10,7 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<EnergyShareWorld>
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  *
  * @method EnergyShareWorld|null find($id, $lockMode = null, $lockVersion = null)
  * @method EnergyShareWorld|null findOneBy(array $criteria, array $orderBy = null)

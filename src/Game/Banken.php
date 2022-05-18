@@ -5,6 +5,9 @@ namespace App\Game;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Card\Card;
 
+/**
+ * @SuppressWarnings(PHPMD.ElseExpression)
+ */
 class Banken
 {
     /**

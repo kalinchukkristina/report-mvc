@@ -4,7 +4,12 @@
 
 {% block body %}
 <div class="title">
+    <div class="nav">
+        <a href="{{ url("index") }}">Tillbaka</a>
+        <a href="{{ path("about_proj") }}">Dokumentation</a>
+    </div>
     <h1>Hållbar energi för alla</h1>
+    
 </div>
 <div class="container">
     <div class="projectContainer">
@@ -30,7 +35,7 @@
             <h3><a href="https://www.globalamalen.se/om-globala-malen/mal-7-hallbar-energi-alla/">Världen</a></h3>
             <p>Även om det talas mycket om förnyabara energikällor, andel av hållbar energi i den totala energiförbrukningen i världen ökar allt för långsamt.</p>
             <div class="illustration">
-                <table>
+                <table class="table">
                     <tr>
                         <th>År</th>
                         {% for data in energy %}
@@ -51,7 +56,7 @@
             <h3>Sverige</h3>
             <p>Sveriges resultat inom hållbar utveckling är mycket bättre i gemförelse med världen, andel av förnybar energi är drygt 50% och den siffra ökar varje år, vilket är en bra tendens.</p>
             <div class="illustration">
-                <table>
+                <table class="table">
                 <tr>
                     <th>År</th>
                     {% for data in energySweden %}
@@ -72,7 +77,7 @@
             <h2><a href="https://www.scb.se/hitta-statistik/statistik-efter-amne/miljo/miljoekonomi-och-hallbar-utveckling/indikatorer-for-hallbar-utveckling/">Förnybara energikällor i Sverige, TWh.</a> </h2>
             <p>Den största förnybara energikällan i Sverige är biobränslen, andel biobränslen i energiförbrukningen ökar varje år. </p>
             <div class="illustration">
-                <table>
+                <table class="table-full">
                     <tr>
                         <th>År</th>
                         <th>Biobränslen</th>

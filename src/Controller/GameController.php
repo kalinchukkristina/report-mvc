@@ -10,6 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Game\Game;
 use App\Game\GameHandler;
 
+/**
+ * @SuppressWarnings(PHPMD.ElseExpression)
+ * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+ */
 class GameController extends AbstractController
 {
     /**
@@ -64,7 +68,7 @@ class GameController extends AbstractController
             $flag = "Banken";
             $gameHandler->bankenGetCard($session, $banken, $game);
             $bankenPoints = $banken->getPoints($session);
-            if ($bankenPoints > 21 ) {
+            if ($bankenPoints > 21) {
                 $gameOn = false;
                 $winner = "Player";
             } elseif ($bankenPoints == $playerPoints or $bankenPoints > $playerPoints) {
@@ -106,7 +110,7 @@ class GameController extends AbstractController
     /**
      * @Route("/game/clear", name="clear")
      */
-    public function clear(SessionInterface $session): Response
+    public function clear(): Response
     {
         return $this->redirectToRoute('game');
     }

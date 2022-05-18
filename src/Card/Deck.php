@@ -4,6 +4,10 @@ namespace App\Card;
 
 use App\Card\Card;
 
+/**
+ * @SuppressWarnings(PHPMD.CountInLoopExpression)
+ * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+ */
 class Deck
 {
     /**

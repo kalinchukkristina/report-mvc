@@ -11,13 +11,18 @@ use App\Card\Card;
 use App\Card\Deck;
 use App\Card\CardHandler;
 use App\Card\DeckWithTwoJokers;
+use App\Card\PlayerCard;
 
+/**
+ * @SuppressWarnings(PHPMD.ElseExpression)
+ * @SuppressWarnings(PHPMD.UnusedPrivateField)
+ */
 class CardController extends AbstractController
 {
     /**
      * @var array<mixed> an array containing a flag variable, a random card object and the length of the remaining deck
      */
-    private  $randomCardInfo;
+    private $randomCardInfo; /** @phpstan-ignore-line */
 
     /**
      * @var Deck a deck of cards
@@ -27,7 +32,7 @@ class CardController extends AbstractController
     /**
      * @var string a flag contaning tru or false to indicate in there are cards left in the deck
      */
-    private $flag;
+    private $flag; /** @phpstan-ignore-line */
 
     /**
      * @Route("/card", name="card")
@@ -123,7 +128,7 @@ class CardController extends AbstractController
         $data = [
             'title' => 'DrawNumber',
             'randomCards' => $randomCards,
-            'remainingCards' => $randomCardInfo[2],
+            'remainingCards' => $randomCardInfo[2], /** @phpstan-ignore-line */
             'flag' => $flag
         ];
 
@@ -147,7 +152,7 @@ class CardController extends AbstractController
 
         if (count($deck) >= ($cards * $players)) {
             for ($i = 1; $i < $players + 1; $i++) {
-                $player = new \App\Card\PlayerCard($i);
+                $player = new PlayerCard($i);
                 array_push($listPlayers, $player);
                 for ($j = 0; $j < $cards; $j++) {
                     $randomNumber = random_int(0, count($deck) - 1);
