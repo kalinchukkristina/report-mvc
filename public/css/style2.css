@@ -22,6 +22,10 @@ body {
     color: #ebebeb;
 }
 
+ul li a {
+    color: #ebebeb;
+}
+
 .title h1 {
     font-size: 6vw;
 }
@@ -121,5 +125,13 @@ th {
 
     img {
         width: 100%;
+    }
+
+    .about-proj {
+        color: black;
+    }
+
+    ul li a {
+        color: rgb(55, 100, 226);
     }
 }

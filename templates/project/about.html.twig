@@ -4,18 +4,29 @@
 
 {% block body %}
 <div>
+    <div class="nav">
+        <a href="{{ url("proj") }}">Projekt</a>
+        <a href="{{ path("about_proj") }}">Dokumentation</a>
+    </div>
     <h1>About-sida till projektet</h1>
 </div>
-<div>
+<div class="about-proj">
     <h2>Om projektet</h2>
+    <p>I mitt projekt har jag valt att presentera fakta om hållbar energi för alla, ett av de 17 globala målen för hållbar utveckling. Jag har valt det här området för att vår energikonsumtion står för det mesta av koldioxid som produceras. Jag anser att ju snabbare världen lyckas med att övergå till förnybara energikällor, desto snabbare kan vi rädda planeten. Min webbplats fokuserar på tre stora indikatorer: andel förnybar energi i den totala energiförbrukningen i världen, andel förnybar energi i den totala energiförbrukningen i Sverige och förnybara energikällor i Sverige.</p>
+    <p>Mätvärden som jag använder kommer från officiella källor, jag har länkat till källorna på webbplatsen.</p>
+    <p>Mitt projekt är inte så stort kodmässigt, jag har bara en Controller med två routes och två template filer. För att visualisera siffror har jag använt två färdiga diagram som finns tillgängliga i mina källor för att jag tycker att de presenterar siffror på ett bra sätt och jag såg ingen mening i att skapa några nya diagram för att visa samma sak. Jag har gjort ett ”pie”-diagram för att visualisera hur många förnybara källor Sverige använde år 2017, diagrammet har jag lagt till som bild för att Chart.js verkade vara för krångligt för detta och dessutom hittade jag ingen lösning för hur man gör olika typer av diagram med hjälp av Chart.js. Det stod ingenting i kraven om hur man borde visa sina diagram, så jag gjorde det enkelt.</p>
+    <p>Projektet påverkade inte så mycket siffror i PhpMetrics eller Scrutinizer. Jag skrev inga tester för projektet eftersom det fanns ingen funktionalitet att testa. Min totala kodtäckning blev 45% . Jag exkluderade Controller(delvis), Entity, Repository och Kernel.php därför blev den totala siffran låg, men jag har 100% teckning för Game och Card classer.</p>
+    <p>Jag har också fokuserat på att göra webbplatsen responsiv. </p>
     <h2>Projektets dokumentation</h2>
-    <ol>
-        <li><a href="http://www.student.bth.se/~krka21/dbwebb-kurser/mvc/me/report/docs/api/index.html"></a>PHPDoc</li>
+    <ul>
+        <li><a href="http://www.student.bth.se/~krka21/dbwebb-kurser/mvc/me/report/docs/api/index.html">PHPDoc</a></li>
         <li><a href="http://www.student.bth.se/~krka21/dbwebb-kurser/mvc/me/report/docs/metrics/index.html">PhpMetrics</a></li>
+        <li><a href="http://www.student.bth.se/~krka21/dbwebb-kurser/mvc/me/report/buid/coverage/index.html">Code Coverage</a></li>
         <li><a href="https://github.com/kalinchukkristina/report-mvc-.git">GitHub repo</a></li>
         <li><a href="https://scrutinizer-ci.com/g/kalinchukkristina/report-mvc-/">Scrutinizer</a></li>
+        
         <li>Reset databas</li>
-    </ol>
+    </ul>
 </div>
 
 {% endblock %}

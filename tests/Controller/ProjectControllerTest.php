@@ -15,7 +15,7 @@ class ProjectControllerTest extends WebTestCase
     public function testProjectAboutLandingPage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/proj/about');
+        $client->request('GET', '/proj/about');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'About-sida till projektet');
