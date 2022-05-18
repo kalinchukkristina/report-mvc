@@ -9,7 +9,7 @@ use App\Card\Card;
 
 use PHPUnit\Framework\TestCase;
 /**
- * Test case for class Player
+ * Test suite for class Player
  */
 class PlayerTest extends TestCase
 {

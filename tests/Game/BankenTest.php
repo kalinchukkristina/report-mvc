@@ -9,7 +9,7 @@ use App\Card\Card;
 
 use PHPUnit\Framework\TestCase;
 /**
- * Test case for class Banken
+ * Test suite for class Banken
  */
 class BankenTest extends TestCase
 {

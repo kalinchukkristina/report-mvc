@@ -8,12 +8,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "constructor\u0020to\u0020create\u0020a\u0020card\u0020object",
             "url": "classes/App-Card-Card.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "method\u0020to\u0020get\u0020card\u0020in\u0020a\u0020string\u0020format",
             "url": "classes/App-Card-Card.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A\u0024number",
@@ -41,10 +41,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Card-Deck.html"
         },                {
-            "fqsen": "\\App\\Card\\Deck\u003A\u003AcreateDeck\u0028\u0029",
-            "name": "createDeck",
-            "summary": "",
-            "url": "classes/App-Card-Deck.html#method_createDeck"
+            "fqsen": "\\App\\Card\\Deck\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020to\u0020create\u0020a\u0020deck\u0020of\u002052\u0020cards",
+            "url": "classes/App-Card-Deck.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003Aadd\u0028\u0029",
             "name": "add",
@@ -73,7 +73,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckWithTwoJokers\u003A\u003AaddJoker\u0028\u0029",
             "name": "addJoker",
-            "summary": "",
+            "summary": "method\u0020to\u0020add\u0020a\u0020joker\u0020Card\u0020to\u0020the\u0020deck",
             "url": "classes/App-Card-DeckWithTwoJokers.html#method_addJoker"
         },                {
             "fqsen": "\\App\\Card\\IdTypeException",
@@ -81,40 +81,10 @@ Search.appendIndex(
             "summary": "Exception\u0020class\u0020for\u0020Player",
             "url": "classes/App-Card-IdTypeException.html"
         },                {
-            "fqsen": "\\App\\Card\\Player",
-            "name": "Player",
-            "summary": "",
-            "url": "classes/App-Card-Player.html"
-        },                {
-            "fqsen": "\\App\\Card\\Player\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Card-Player.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Card\\Player\u003A\u003Aadd\u0028\u0029",
-            "name": "add",
-            "summary": "",
-            "url": "classes/App-Card-Player.html#method_add"
-        },                {
-            "fqsen": "\\App\\Card\\Player\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/App-Card-Player.html#property_id"
-        },                {
-            "fqsen": "\\App\\Card\\Player\u003A\u003A\u0024hand",
-            "name": "hand",
-            "summary": "",
-            "url": "classes/App-Card-Player.html#property_hand"
-        },                {
             "fqsen": "\\App\\Controller\\CardController",
             "name": "CardController",
             "summary": "",
             "url": "classes/App-Controller-CardController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003AcreateDeck\u0028\u0029",
-            "name": "createDeck",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_createDeck"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Acard\u0028\u0029",
             "name": "card",
@@ -146,20 +116,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-CardController.html#method_deal"
         },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003A\u0024deck2",
+            "fqsen": "\\App\\Controller\\CardController\u003A\u003Adeck2\u0028\u0029",
             "name": "deck2",
             "summary": "",
-            "url": "classes/App-Controller-CardController.html#property_deck2"
+            "url": "classes/App-Controller-CardController.html#method_deck2"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Anumber\u0028\u0029",
             "name": "number",
             "summary": "",
             "url": "classes/App-Controller-CardController.html#method_number"
         },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003A\u0024randomCard",
-            "name": "randomCard",
+            "fqsen": "\\App\\Controller\\CardController\u003A\u003A\u0024randomCardInfo",
+            "name": "randomCardInfo",
             "summary": "",
-            "url": "classes/App-Controller-CardController.html#property_randomCard"
+            "url": "classes/App-Controller-CardController.html#property_randomCardInfo"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003A\u0024flag",
             "name": "flag",
@@ -276,11 +246,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Game-Game.html#method_getCardvalue"
         },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024deckObj",
-            "name": "deckObj",
-            "summary": "",
-            "url": "classes/App-Game-Game.html#property_deckObj"
-        },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024player",
             "name": "player",
             "summary": "",
@@ -295,6 +260,11 @@ Search.appendIndex(
             "name": "randomCard",
             "summary": "",
             "url": "classes/App-Game-Game.html#property_randomCard"
+        },                {
+            "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024deckObj",
+            "name": "deckObj",
+            "summary": "",
+            "url": "classes/App-Game-Game.html#property_deckObj"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024currentDeck",
             "name": "currentDeck",
@@ -361,6 +331,606 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Kernel.html"
         },                {
+            "fqsen": "\\App\\Card\\CardHandler",
+            "name": "CardHandler",
+            "summary": "",
+            "url": "classes/App-Card-CardHandler.html"
+        },                {
+            "fqsen": "\\App\\Card\\CardHandler\u003A\u003AdrawACardFromSessionDeck\u0028\u0029",
+            "name": "drawACardFromSessionDeck",
+            "summary": "A\u0020function\u0020to\u0020draw\u0020a\u0020random\u0020card\u0020from\u0020deck\u0020if\u0020there\u0020is\u0020already\u0020a\u0020previous\u0020deck\u0020stored\nin\u0020session",
+            "url": "classes/App-Card-CardHandler.html#method_drawACardFromSessionDeck"
+        },                {
+            "fqsen": "\\App\\Card\\CardHandler\u003A\u003AdrawACardSessionEmpty\u0028\u0029",
+            "name": "drawACardSessionEmpty",
+            "summary": "A\u0020function\u0020to\u0020draw\u0020a\u0020card\u0020for\u0020the\u0020first\u0020time,\u0020the\u0020deck\u0020is\u0020full,\u0020has\u002052\u0020cards",
+            "url": "classes/App-Card-CardHandler.html#method_drawACardSessionEmpty"
+        },                {
+            "fqsen": "\\App\\Card\\CardHandler\u003A\u003A\u0024numberOfCardsLeft",
+            "name": "numberOfCardsLeft",
+            "summary": "",
+            "url": "classes/App-Card-CardHandler.html#property_numberOfCardsLeft"
+        },                {
+            "fqsen": "\\App\\Card\\CardHandler\u003A\u003A\u0024randomCard",
+            "name": "randomCard",
+            "summary": "",
+            "url": "classes/App-Card-CardHandler.html#property_randomCard"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerCard",
+            "name": "PlayerCard",
+            "summary": "",
+            "url": "classes/App-Card-PlayerCard.html"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerCard\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Card-PlayerCard.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerCard\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/App-Card-PlayerCard.html#method_add"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerCard\u003A\u003A\u0024idNum",
+            "name": "idNum",
+            "summary": "",
+            "url": "classes/App-Card-PlayerCard.html#property_idNum"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerCard\u003A\u003A\u0024hand",
+            "name": "hand",
+            "summary": "",
+            "url": "classes/App-Card-PlayerCard.html#property_hand"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController",
+            "name": "BooksController",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003AcreateBook\u0028\u0029",
+            "name": "createBook",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_createBook"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003AcreateBookHandler\u0028\u0029",
+            "name": "createBookHandler",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_createBookHandler"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003AshowAllBooks\u0028\u0029",
+            "name": "showAllBooks",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_showAllBooks"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003AshowbookById\u0028\u0029",
+            "name": "showbookById",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_showbookById"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003AupdateBookById\u0028\u0029",
+            "name": "updateBookById",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_updateBookById"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003AupdateBookHandler\u0028\u0029",
+            "name": "updateBookHandler",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_updateBookHandler"
+        },                {
+            "fqsen": "\\App\\Controller\\BooksController\u003A\u003AdeleteBookById\u0028\u0029",
+            "name": "deleteBookById",
+            "summary": "",
+            "url": "classes/App-Controller-BooksController.html#method_deleteBookById"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricsController",
+            "name": "MetricsController",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricsController\u003A\u003Amertics\u0028\u0029",
+            "name": "mertics",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html#method_mertics"
+        },                {
+            "fqsen": "\\App\\Controller\\ProductController",
+            "name": "ProductController",
+            "summary": "",
+            "url": "classes/App-Controller-ProductController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProductController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Controller-ProductController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AcreateProduct\u0028\u0029",
+            "name": "createProduct",
+            "summary": "",
+            "url": "classes/App-Controller-ProductController.html#method_createProduct"
+        },                {
+            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowAllProduct\u0028\u0029",
+            "name": "showAllProduct",
+            "summary": "",
+            "url": "classes/App-Controller-ProductController.html#method_showAllProduct"
+        },                {
+            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowProductById\u0028\u0029",
+            "name": "showProductById",
+            "summary": "",
+            "url": "classes/App-Controller-ProductController.html#method_showProductById"
+        },                {
+            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AdeleteProductById\u0028\u0029",
+            "name": "deleteProductById",
+            "summary": "",
+            "url": "classes/App-Controller-ProductController.html#method_deleteProductById"
+        },                {
+            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AupdateProduct\u0028\u0029",
+            "name": "updateProduct",
+            "summary": "",
+            "url": "classes/App-Controller-ProductController.html#method_updateProduct"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjektController",
+            "name": "ProjektController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjektController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjektController\u003A\u003Aproject\u0028\u0029",
+            "name": "project",
+            "summary": "",
+            "url": "classes/App-Controller-ProjektController.html#method_project"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjektController\u003A\u003AaboutProject\u0028\u0029",
+            "name": "aboutProject",
+            "summary": "",
+            "url": "classes/App-Controller-ProjektController.html#method_aboutProject"
+        },                {
+            "fqsen": "\\App\\Entity\\Books",
+            "name": "Books",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AgetTitle\u0028\u0029",
+            "name": "getTitle",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_getTitle"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AsetTitle\u0028\u0029",
+            "name": "setTitle",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_setTitle"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AgetIsbn\u0028\u0029",
+            "name": "getIsbn",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_getIsbn"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AsetIsbn\u0028\u0029",
+            "name": "setIsbn",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_setIsbn"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AgetAuthor\u0028\u0029",
+            "name": "getAuthor",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_getAuthor"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AsetAuthor\u0028\u0029",
+            "name": "setAuthor",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_setAuthor"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AgetPic\u0028\u0029",
+            "name": "getPic",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_getPic"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003AsetPic\u0028\u0029",
+            "name": "setPic",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#method_setPic"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003A\u0024title",
+            "name": "title",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#property_title"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003A\u0024isbn",
+            "name": "isbn",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#property_isbn"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003A\u0024author",
+            "name": "author",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#property_author"
+        },                {
+            "fqsen": "\\App\\Entity\\Books\u003A\u003A\u0024pic",
+            "name": "pic",
+            "summary": "",
+            "url": "classes/App-Entity-Books.html#property_pic"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden",
+            "name": "EnergyShareSweden",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003AgetYear\u0028\u0029",
+            "name": "getYear",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#method_getYear"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003AsetYear\u0028\u0029",
+            "name": "setYear",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#method_setYear"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003AgetPercentage\u0028\u0029",
+            "name": "getPercentage",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#method_getPercentage"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003AsetPercentage\u0028\u0029",
+            "name": "setPercentage",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#method_setPercentage"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003A\u0024year",
+            "name": "year",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#property_year"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareSweden\u003A\u003A\u0024percentage",
+            "name": "percentage",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareSweden.html#property_percentage"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld",
+            "name": "EnergyShareWorld",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003AgetYear\u0028\u0029",
+            "name": "getYear",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#method_getYear"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003AsetYear\u0028\u0029",
+            "name": "setYear",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#method_setYear"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003AgetPercentage\u0028\u0029",
+            "name": "getPercentage",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#method_getPercentage"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003AsetPercentage\u0028\u0029",
+            "name": "setPercentage",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#method_setPercentage"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003A\u0024year",
+            "name": "year",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#property_year"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergyShareWorld\u003A\u003A\u0024percentage",
+            "name": "percentage",
+            "summary": "",
+            "url": "classes/App-Entity-EnergyShareWorld.html#property_percentage"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource",
+            "name": "EnergySource",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetBio\u0028\u0029",
+            "name": "getBio",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getBio"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AsetBio\u0028\u0029",
+            "name": "setBio",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_setBio"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetWater\u0028\u0029",
+            "name": "getWater",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getWater"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AsetWater\u0028\u0029",
+            "name": "setWater",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_setWater"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetWind\u0028\u0029",
+            "name": "getWind",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getWind"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AsetWind\u0028\u0029",
+            "name": "setWind",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_setWind"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetHeat\u0028\u0029",
+            "name": "getHeat",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getHeat"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AsetHeat\u0028\u0029",
+            "name": "setHeat",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_setHeat"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetSun\u0028\u0029",
+            "name": "getSun",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getSun"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AsetSun\u0028\u0029",
+            "name": "setSun",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_setSun"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetTotal\u0028\u0029",
+            "name": "getTotal",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getTotal"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AsetTotal\u0028\u0029",
+            "name": "setTotal",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_setTotal"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AgetYear\u0028\u0029",
+            "name": "getYear",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_getYear"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003AsetYear\u0028\u0029",
+            "name": "setYear",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#method_setYear"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024bio",
+            "name": "bio",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_bio"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024water",
+            "name": "water",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_water"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024wind",
+            "name": "wind",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_wind"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024heat",
+            "name": "heat",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_heat"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024sun",
+            "name": "sun",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_sun"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024total",
+            "name": "total",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_total"
+        },                {
+            "fqsen": "\\App\\Entity\\EnergySource\u003A\u003A\u0024year",
+            "name": "year",
+            "summary": "",
+            "url": "classes/App-Entity-EnergySource.html#property_year"
+        },                {
+            "fqsen": "\\App\\Entity\\Product",
+            "name": "Product",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#method_getName"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#method_setName"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetValue\u0028\u0029",
+            "name": "getValue",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#method_getValue"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetValue\u0028\u0029",
+            "name": "setValue",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#method_setValue"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#property_name"
+        },                {
+            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024value",
+            "name": "value",
+            "summary": "",
+            "url": "classes/App-Entity-Product.html#property_value"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandler",
+            "name": "GameHandler",
+            "summary": "",
+            "url": "classes/App-Game-GameHandler.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandler\u003A\u003AplayerGetCard\u0028\u0029",
+            "name": "playerGetCard",
+            "summary": "",
+            "url": "classes/App-Game-GameHandler.html#method_playerGetCard"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandler\u003A\u003AbankenGetCard\u0028\u0029",
+            "name": "bankenGetCard",
+            "summary": "",
+            "url": "classes/App-Game-GameHandler.html#method_bankenGetCard"
+        },                {
+            "fqsen": "\\App\\Repository\\BooksRepository",
+            "name": "BooksRepository",
+            "summary": "",
+            "url": "classes/App-Repository-BooksRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\BooksRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-BooksRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\BooksRepository\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/App-Repository-BooksRepository.html#method_add"
+        },                {
+            "fqsen": "\\App\\Repository\\BooksRepository\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/App-Repository-BooksRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareSwedenRepository",
+            "name": "EnergyShareSwedenRepository",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareSwedenRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareSwedenRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareSwedenRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareSwedenRepository\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareSwedenRepository.html#method_add"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareSwedenRepository\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareSwedenRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareWorldRepository",
+            "name": "EnergyShareWorldRepository",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareWorldRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareWorldRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareWorldRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareWorldRepository\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareWorldRepository.html#method_add"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergyShareWorldRepository\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/App-Repository-EnergyShareWorldRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergySourceRepository",
+            "name": "EnergySourceRepository",
+            "summary": "",
+            "url": "classes/App-Repository-EnergySourceRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergySourceRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-EnergySourceRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergySourceRepository\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/App-Repository-EnergySourceRepository.html#method_add"
+        },                {
+            "fqsen": "\\App\\Repository\\EnergySourceRepository\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/App-Repository-EnergySourceRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository",
+            "name": "ProductRepository",
+            "summary": "",
+            "url": "classes/App-Repository-ProductRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-ProductRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/App-Repository-ProductRepository.html#method_add"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/App-Repository-ProductRepository.html#method_remove"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -376,6 +946,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-controller.html"
         },                {
+            "fqsen": "\\App\\Entity",
+            "name": "Entity",
+            "summary": "",
+            "url": "namespaces/app-entity.html"
+        },                {
             "fqsen": "\\App\\Game",
             "name": "Game",
             "summary": "",
@@ -385,5 +960,10 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Repository",
+            "name": "Repository",
+            "summary": "",
+            "url": "namespaces/app-repository.html"
         }            ]
 );

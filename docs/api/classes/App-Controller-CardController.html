@@ -68,7 +68,15 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-entity.html" class="">Entity</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-game.html" class="">Game</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-repository.html" class="">Repository</a>
                 
             </li>
             </ul>
@@ -122,14 +130,37 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
         
-    <section class="phpdocumentor-description"></section>
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">SuppressWarnings</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>(PHPMD.ElseExpression)</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">SuppressWarnings</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>(PHPMD.UnusedPrivateField)</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 
 
@@ -142,31 +173,24 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -public">
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Controller-CardController.html#property_deck">$deck</a>
     <span>
                         &nbsp;: <a href="classes/App-Card-Deck.html"><abbr title="\App\Card\Deck">Deck</abbr></a>            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/App-Controller-CardController.html#property_deck2">$deck2</a>
-    <span>
-                        &nbsp;: <a href="classes/App-Card-Deck.html"><abbr title="\App\Card\Deck">Deck</abbr></a>            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Controller-CardController.html#property_flag">$flag</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/App-Controller-CardController.html#property_randomCard">$randomCard</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Controller-CardController.html#property_randomCardInfo">$randomCardInfo</a>
     <span>
-                        &nbsp;: <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -174,13 +198,6 @@
     <a href="classes/App-Controller-CardController.html#method_card">card()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Controller-CardController.html#method_createDeck">createDeck()</a>
-    <span>
-                                &nbsp;: <a href="classes/App-Card-Deck.html"><abbr title="\App\Card\Deck">Deck</abbr></a>    </span>
 </dt>
 <dd></dd>
 
@@ -249,7 +266,7 @@
         class="
             phpdocumentor-element
             -property
-            -public
+            -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_deck">
@@ -261,20 +278,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type"><a href="classes/App-Card-Deck.html"><abbr title="\App\Card\Deck">Deck</abbr></a></span>
     <span class="phpdocumentor-signature__name">$deck</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>a deck of cards</p>
+</section>
 
     
 
@@ -283,41 +300,7 @@
         class="
             phpdocumentor-element
             -property
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_deck2">
-        $deck2
-        <a href="classes/App-Controller-CardController.html#property_deck2" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">17</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-Card-Deck.html"><abbr title="\App\Card\Deck">Deck</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$deck2</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -public
+            -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_flag">
@@ -329,20 +312,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$flag</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>a flag contaning tru or false to indicate in there are cards left in the deck</p>
+</section>
 
     
 
@@ -351,32 +334,32 @@
         class="
             phpdocumentor-element
             -property
-            -public
+            -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_randomCard">
-        $randomCard
-        <a href="classes/App-Controller-CardController.html#property_randomCard" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_randomCardInfo">
+        $randomCardInfo
+        <a href="classes/App-Controller-CardController.html#property_randomCardInfo" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$randomCard</span>
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$randomCardInfo</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>an array containing a flag variable, a random card object and the length of the remaining deck</p>
+</section>
 
     
 
@@ -441,39 +424,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_createDeck">
-        createDeck()
-        <a href="classes/App-Controller-CardController.html#method_createDeck" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">21</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">createDeck</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Card-Deck.html"><abbr title="\App\Card\Deck">Deck</abbr></a></span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/App-Card-Deck.html"><abbr title="\App\Card\Deck">Deck</abbr></a></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_deal">
         deal()
         <a href="classes/App-Controller-CardController.html#method_deal" class="headerlink"><i class="fas fa-link"></i></a>
@@ -481,7 +431,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 
     </aside>
 
@@ -602,7 +552,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
@@ -707,7 +657,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 
     </aside>
 
@@ -773,7 +723,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardController.php"><a href="files/src-controller-cardcontroller.html"><abbr title="src/Controller/CardController.php">CardController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 
@@ -795,7 +745,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>(&quot;/card/api/deck&quot;)</p>
+                                                 <section class="phpdocumentor-description"><p>(&quot;/card/api/deck&quot;, name=&quot;api&quot;)</p>
 </section>
 
                                     </dd>

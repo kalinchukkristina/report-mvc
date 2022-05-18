@@ -4,8 +4,14 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * Test suite for GameController
+ */
 class GameControllerTest extends WebTestCase
 {
+    /**
+     * testing to render game landing page
+     */
     public function testGameLandingPage(): void
     {
         $client = static::createClient();
@@ -13,9 +19,11 @@ class GameControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Game');
-//        $client->clickLink('StartGame');
     }
 
+    /**
+     * testing to render play page
+     */
     public function testGamePage(): void
     {
         $client = static::createClient();
@@ -25,6 +33,9 @@ class GameControllerTest extends WebTestCase
         $this->assertSelectorTextContains('h1', 'Card game');
     }
 
+    /**
+     * testing to click on the Player's button "Get card" button
+     */
     public function testGamePageClickedOnGetNewCardButton(): void
     {
         $client = static::createClient();
@@ -34,6 +45,9 @@ class GameControllerTest extends WebTestCase
         $client->submitForm('card');
     }
 
+    /**
+     * testing to click on the Player's button "Stop" button
+     */
     public function testGamePageClickedOnStopButton(): void
     {
         $client = static::createClient();
@@ -43,6 +57,9 @@ class GameControllerTest extends WebTestCase
         $client->submitForm('stop');
     }
 
+    /**
+     * testing to click on the Banken's button "Get card" button
+     */
     public function testGamePageClickedOnGetNewCardBankButton(): void
     {
         $client = static::createClient();
@@ -53,6 +70,9 @@ class GameControllerTest extends WebTestCase
         $client->submitForm('cardBank');
     }
 
+    /**
+     * testing to click on the Banken's button "Stop" button
+     */
     public function testGamePageClickedOnStopBankButton(): void
     {
         $client = static::createClient();

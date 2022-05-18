@@ -9,7 +9,7 @@ use App\Card\Card;
 
 use PHPUnit\Framework\TestCase;
 /**
- * Test case for class Game
+ * Test suite for class Game
  */
 class GameTest extends TestCase
 {
@@ -37,6 +37,10 @@ class GameTest extends TestCase
         $this->assertInstanceOf("\App\Card\Card", $randomCard);
     }
 
+    /**
+     * testing to get a random card from the deck when
+     * deck is stored in session
+     */
     public function testGetRandomCardWhenSessionIsSet()
     {
         $game = new Game;
@@ -53,7 +57,7 @@ class GameTest extends TestCase
 
     /**
      * geting a numerical value of the card if the card is
-     * Jack, Quenn, King or Ace
+     * Jack, Queen, King or Ace
      */
     public function testGetCardValueLetter()
     {

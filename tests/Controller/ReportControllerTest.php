@@ -4,8 +4,14 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * Test suite for ReportController
+ */
 class ReportControllerTest extends WebTestCase
 {
+    /**
+     * testing to render index page
+     */
     public function testIndexPage(): void
     {
         $client = static::createClient();
@@ -18,6 +24,9 @@ class ReportControllerTest extends WebTestCase
         $this->assertPageTitleSame($title);
     }
 
+    /**
+     * testing to render about page
+     */
     public function testAboutPage(): void
     {
         $client = static::createClient();
@@ -30,6 +39,9 @@ class ReportControllerTest extends WebTestCase
         $this->assertPageTitleSame($title);
     }
 
+    /**
+     * testing to render report page
+     */
     public function testReportPage(): void
     {
         $client = static::createClient();

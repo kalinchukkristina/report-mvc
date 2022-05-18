@@ -5,8 +5,14 @@ namespace App\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Test suite for CardController
+ */
 class CardControllerTest extends WebTestCase
 {
+    /**
+     * testing that it is possible to load the landing page in CardController
+     */
     public function testRenderingCardLandingPage(): void
     {
         $client = static::createClient();
@@ -20,6 +26,9 @@ class CardControllerTest extends WebTestCase
         $this->assertPageTitleContains($title);
     }
 
+    /**
+     * testing to render deck page
+     */
     public function testRenderingDeckPage(): void
     {
         $client = static::createClient();
@@ -32,6 +41,9 @@ class CardControllerTest extends WebTestCase
         $this->assertPageTitleContains($title);
     }
 
+    /**
+     * testing to render shuffle page
+     */
     public function testRenderingShufflePage(): void
     {
         $client = static::createClient();
@@ -44,6 +56,9 @@ class CardControllerTest extends WebTestCase
         $this->assertPageTitleContains($title);
     }
 
+    /**
+     * testing to render draw page
+     */
     public function testRenderingDrawPage(): void
     {
         $client = static::createClient();
@@ -57,20 +72,9 @@ class CardControllerTest extends WebTestCase
         $this->assertPageTitleContains($title);
     }
 
-/*    public function testRenderingDrawNumberPageNoSession(): void
-    {
-        $client = static::createClient();
-        $param = 3;
-        $client->request('GET', "/card/deck/draw/", [3]);
-
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Draw a number of cards');
-        $this->assertSelectorTextContains('h2', 'Your card:');
-
-        $title = "DrawNumber";
-        $this->assertPageTitleContains($title);
-    }*/
-
+    /**
+     * testing to render the page with cards and two jokers
+     */
     public function testRenderingDeckWithjokersPage(): void
     {
         $client = static::createClient();
