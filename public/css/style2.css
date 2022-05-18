@@ -1,0 +1,62 @@
+body {
+    height: 100vh;
+    color: #ebebeb;
+    background-image: linear-gradient(#0f2537 20%, #ffffff);
+    background-repeat: no-repeat;
+    font-size: 1.3em;
+
+}
+
+.title {
+    height: 10em;
+    border-top: 2px solid #ebebeb;
+    border-bottom: 2px solid #ebebeb;
+}
+
+h1 {
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+    font-size: 4em;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.projectContainer {
+    width: 35%;
+    font-size: 1.15em;
+    text-align: center;
+}
+
+.data {
+    width: 90%;
+    background-color: aliceblue;
+    color: black;
+    padding: 2%;
+}
+
+table {
+    width: 100%;
+    border: 1px solid;
+    margin: 10px;
+    text-align: center;
+}
+
+td, th {
+    text-align: center;
+    padding: 3px;
+    
+}
+
+th {
+    border-bottom: 1px solid;
+}
+
+.illustration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
