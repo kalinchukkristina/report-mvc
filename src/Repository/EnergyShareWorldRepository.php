@@ -48,6 +48,48 @@ class EnergyShareWorldRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @throws ORMException
+     * deletes all data from table and insert default data
+     */
+    public function resetTable() {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            DELETE FROM energy_share_world;
+            ';
+
+        $sql2 = '
+            INSERT INTO energy_share_world (year, percentage) 
+            VALUES 
+                (2000, 17.29), 
+                (2001, 17.04), 
+                (2002, 17.05),
+                (2003, 16.85),
+                (2004, 16.51),
+                (2005, 16.33),
+                (2006, 16.27),
+                (2007, 16.15),
+                (2008, 16.29),
+                (2009, 16.81),
+                (2010, 16.56),
+                (2011, 16.63),
+                (2012, 16.89),
+                (2013, 17.06),
+                (2014, 17.18),
+                (2015, 17.24),
+                (2016, 17.48);
+        ';
+
+        $stmt = $conn->prepare($sql);
+        $stmt2 = $conn->prepare($sql2);
+
+        $resultSet = $stmt->executeQuery();
+        $resultSet = $stmt2->executeQuery();
+
+    }
+
+
     // /**
     //  * @return EnergyShareWorld[] Returns an array of EnergyShareWorld objects
     //  */

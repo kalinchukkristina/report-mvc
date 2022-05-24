@@ -5,9 +5,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 use App\Repository\EnergyShareWorldRepository;
 use App\Repository\EnergyShareSwedenRepository;
 use App\Repository\EnergySourceRepository;
+use App\Repository\BooksRepository;
 
 /**
  * @SuppressWarnings(PHPMD.CamelCaseParameterName)
@@ -47,4 +50,27 @@ class ProjektController extends AbstractController
 
         return $this->render('project\about.html.twig', $data);
     }
+
+    /**
+     * @Route("/proj/reset", name="reset")
+     */
+    public function resetDatabase(
+        EnergyShareWorldRepository $EnergyShareWorldRepository,
+        EnergyShareSwedenRepository $EnergyShareSwedenRepository,
+        EnergySourceRepository $EnergySourceRepository,
+        BooksRepository $BooksRepository): Response
+    {
+        try {
+            $EnergyShareWorldRepository->resetTable();
+            $EnergyShareSwedenRepository->resetTable();
+            $EnergySourceRepository->resetTable();
+            $BooksRepository->resetTable();
+
+            return new Response("Tabeller i databasen har återställts nu");
+        } catch (ORMException) {
+            return new Response("Reset failed");
+        }
+    }
 }
+
+

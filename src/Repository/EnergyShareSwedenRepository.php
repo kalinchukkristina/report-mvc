@@ -48,6 +48,44 @@ class EnergyShareSwedenRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @throws ORMException
+     * deletes all data from table and insert default data
+     */
+    public function resetTable() {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            DELETE FROM energy_share_sweden;
+            ';
+
+        $sql2 = '
+            INSERT INTO energy_share_sweden (year, percentage)
+            VALUES 
+                (2005, 41),
+                (2006, 43),
+                (2007, 44),
+                (2008, 45),
+                (2009, 48),
+                (2010, 47),
+                (2011, 49),
+                (2012, 51),
+                (2013, 52),
+                (2014, 52),
+                (2015, 54),
+                (2016, 54),
+                (2017, 54);
+        ';
+
+        $stmt = $conn->prepare($sql);
+        $stmt2 = $conn->prepare($sql2);
+
+        $resultSet = $stmt->executeQuery();
+        $resultSet = $stmt2->executeQuery();
+    }
+
+
+
     // /**
     //  * @return EnergyShareSweden[] Returns an array of EnergyShareSweden objects
     //  */
