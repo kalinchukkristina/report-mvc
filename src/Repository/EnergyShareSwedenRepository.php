@@ -80,8 +80,8 @@ class EnergyShareSwedenRepository extends ServiceEntityRepository
         $stmt = $conn->prepare($sql);
         $stmt2 = $conn->prepare($sql2);
 
-        $resultSet = $stmt->executeQuery();
-        $resultSet = $stmt2->executeQuery();
+        $stmt->executeQuery();
+        $stmt2->executeQuery();
     }
 
 

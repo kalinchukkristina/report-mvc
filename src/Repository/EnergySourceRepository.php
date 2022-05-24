@@ -81,8 +81,8 @@ class EnergySourceRepository extends ServiceEntityRepository
         $stmt = $conn->prepare($sql);
         $stmt2 = $conn->prepare($sql2);
 
-        $resultSet = $stmt->executeQuery();
-        $resultSet = $stmt2->executeQuery();
+        $stmt->executeQuery();
+        $stmt2->executeQuery();
     }
     // /**
     //  * @return EnergySource[] Returns an array of EnergySource objects
