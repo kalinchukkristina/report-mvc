@@ -53,7 +53,8 @@ class EnergySourceRepository extends ServiceEntityRepository
      * @throws ORMException
      * deletes all data from table and insert default data
      */
-    public function resetTable() {
+    public function resetTable()
+    {
         $conn = $this->getEntityManager()->getConnection();
 
         $sql = '

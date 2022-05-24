@@ -52,7 +52,8 @@ class EnergyShareWorldRepository extends ServiceEntityRepository
      * @throws ORMException
      * deletes all data from table and insert default data
      */
-    public function resetTable() {
+    public function resetTable()
+    {
         $conn = $this->getEntityManager()->getConnection();
 
         $sql = '
@@ -84,9 +85,8 @@ class EnergyShareWorldRepository extends ServiceEntityRepository
         $stmt = $conn->prepare($sql);
         $stmt2 = $conn->prepare($sql2);
 
-        $resultSet = $stmt->executeQuery();
-        $resultSet = $stmt2->executeQuery();
-
+        $stmt->executeQuery();
+        $stmt2->executeQuery();
     }
 
 

@@ -59,8 +59,8 @@ class ProjektController extends AbstractController
         EnergyShareWorldRepository $EnergyShareWorldRepository,
         EnergyShareSwedenRepository $EnergyShareSwedenRepository,
         EnergySourceRepository $EnergySourceRepository,
-        BooksRepository $BooksRepository): Response
-    {
+        BooksRepository $BooksRepository
+    ): Response {
         try {
             $EnergyShareWorldRepository->resetTable();
             $EnergyShareSwedenRepository->resetTable();
@@ -73,5 +73,3 @@ class ProjektController extends AbstractController
         }
     }
 }
-
-

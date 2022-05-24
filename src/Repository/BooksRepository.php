@@ -51,7 +51,8 @@ class BooksRepository extends ServiceEntityRepository
     /**
      * deletes all data from table and insert default data
      */
-    public function resetTable() {
+    public function resetTable()
+    {
         $conn = $this->getEntityManager()->getConnection();
 
         $sql = '
@@ -61,9 +62,12 @@ class BooksRepository extends ServiceEntityRepository
         $sql2 = "
             INSERT INTO books (title, isbn, author, pic)
             VALUES 
-                ('The Night in Lisbon', 9780091115708, 'Erich Maria Remarque', 'https://upload.wikimedia.org/wikipedia/en/b/b1/The.Night.In.Lisbon.cover.jpg'),
-                ('A Connecticut Yankee in King Arthur’s Court', 123456, 'Mark Twain', 'https://www.publishersweekly.com/images/cached/ARTICLE_PHOTO/photo/000/000/028/28133-v1-185x.JPG'),
-                ('The adventures of Sherlock Holmes', 0759398747, 'Arthur Conan Doyle', 'https://img.thriftbooks.com/api/images/m/16edeba80bcc9aa503e7544ace4f8b7fdb69f771.jpg');
+                ('The Night in Lisbon', 9780091115708, 'Erich Maria Remarque', 
+                'https://upload.wikimedia.org/wikipedia/en/b/b1/The.Night.In.Lisbon.cover.jpg'),
+                ('A Connecticut Yankee in King Arthur’s Court', 123456, 'Mark Twain', 
+                'https://www.publishersweekly.com/images/cached/ARTICLE_PHOTO/photo/000/000/028/28133-v1-185x.JPG'),
+                ('The adventures of Sherlock Holmes', 0759398747, 'Arthur Conan Doyle', 
+                'https://img.thriftbooks.com/api/images/m/16edeba80bcc9aa503e7544ace4f8b7fdb69f771.jpg');
         ";
 
         $stmt = $conn->prepare($sql);
